@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+  
+  /* Forzar color de texto oscuro en el sidebar y sus elementos internos en modo oscuro */
+  aside, aside * {
+    color: #333 !important;
+  }
+  
+  aside h3 {
+    color: #111 !important;
+  }
+  
+  aside a, aside button {
+    color: #333 !important;
+  }
+  
+  aside a:hover, aside button:hover {
+    color: #1d4ed8 !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  direction: rtl;
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer base {
+  html {
+    direction: rtl;
+  }
+  
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: rgb(var(--background-rgb));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-relaxed;
+  }
+
+  p {
+    @apply leading-relaxed mb-4;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 md:px-6 lg:px-8 mx-auto;
+  }
+
+  .blog-content {
+    @apply max-w-4xl mx-auto px-4 py-8;
+  }
+
+  .blog-title {
+    @apply text-3xl font-bold mb-4 leading-relaxed;
+  }
+
+  .blog-meta {
+    @apply text-gray-600 mb-6;
+  }
+
+  .blog-image {
+    @apply w-full rounded-lg mb-6;
+  }
+
+  .author-bio {
+    @apply flex items-center space-x-4 space-x-reverse mb-6 bg-gray-50 p-4 rounded-lg;
+  }
+
+  .author-image {
+    @apply w-16 h-16 rounded-full;
+  }
+
+  .author-info {
+    @apply flex-1;
+  }
+
+  .nav-link {
+    @apply hover:text-blue-600 transition-colors px-4 py-2;
+  }
+
+  .blog-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4;
+  }
+
+  .blog-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-lg;
+  }
+
+  .mobile-menu {
+    @apply fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out;
+  }
+  
+  /* Estilos de sidebar para asegurar visibilidad del texto */
+  aside .bg-white {
+    @apply text-gray-800;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  /* Ensure blog content has proper text colors */
+  .prose {
+    @apply text-gray-800;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-gray-800;
+  }
+  
+  .prose p, .prose li, .prose blockquote {
+    @apply text-gray-700;
+  }
+  
+  /* Fix for sidebar text readability */
+  .blog-sidebar {
+    @apply text-gray-800;
+  }
+}
+
+/* RTL Support */
+*[dir="rtl"] {
+  text-align: right;
+}
+
+*[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Arabic Typography Improvements */
+h1, h2, h3, h4, h5, h6 {
+  @apply leading-relaxed;
+}
+
+p {
+  @apply leading-relaxed mb-4;
+}
+
+/* Mobile Menu Improvements */
+.mobile-menu {
+  @apply fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out;
+}
+
+/* Container Padding Fix */
+.container {
+  @apply px-4 md:px-6 lg:px-8;
+}
+
+/* تأثيرات حركية */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* تطبيق التأثيرات */
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+/* تعديلات التباين */
+.brightness-40 {
+  filter: brightness(0.4);
+}
+
+/* تأثيرات التحويم */
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* فئات خاصة بالتصميم */
+.text-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(45deg, #3b82f6, #8b5cf6);
+}
+
+/* إصلاحات للغة العربية */
+.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1 !important;
+}
+
+/* زخارف إسلامية للصفحات */
+.islamic-pattern {
+  background-color: #f8fafc;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2320407b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ترويسة للصفحة مع تأثير خلفية مدمجة */
+.hero-pattern {
+  background-color: #1e40af;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+} 
