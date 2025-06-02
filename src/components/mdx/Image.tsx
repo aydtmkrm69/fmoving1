@@ -34,6 +34,13 @@ const IMAGE_MAPPING: Record<string, string> = {
   // مسارات الصور التي سببت الأخطاء
   '/images/Furniture_moving_Jeddah.jpeg': '/images/blog/Furniture_Moving_in_Jeddah.jpeg',
   '/images/Furniture_moving_Dammam.jpeg': '/images/blog/Everything_You_Need_to_Know_About_Moving_Furniture_in_Dammam.jpeg',
+  '/images/Furniture_Moving_Saudi_arabia.jpeg': '/images/blog/Furniture_Moving_Saudi_arabia.jpeg',
+  
+  // إضافة مسارات جديدة للصور المفقودة
+  '/images/blog/moving-budget-planning.jpg': '/images/blog/Furniture_Moving_Prices_in_Saudi_Arabia.jpeg',
+  '/images/blog/new-home-layout-planning.jpg': '/images/blog/Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
+  '/images/blog/complete-timeline-furniture-moving.jpg': '/images/blog/Furniture_Moving_Process.jpeg',
+  '/images/blog/unpacking-organization.jpg': '/images/blog/Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
   
   // صور الشهادات - الآن موجودة في المجلد الصحيح
   '/images/testimonials/testimonial-1.jpg': '/images/testimonials/testimonial-1.jpg',
