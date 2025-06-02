@@ -29,7 +29,7 @@ Install Command: npm install
 أضف هذه المتغيرات في Vercel Dashboard:
 
 ```env
-SITE_URL=https://your-project-name.vercel.app
+SITE_URL=https://fmoving1.vercel.app
 NODE_ENV=production
 NEXT_TELEMETRY_DISABLED=1
 ```

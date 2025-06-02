@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://furniture-moving-blog.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://fmoving1.vercel.app',
   generateRobotsTxt: true,
   generateIndexSitemap: true,
   sitemapSize: 5000,

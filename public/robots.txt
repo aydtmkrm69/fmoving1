@@ -20,8 +20,8 @@ Allow: /
 Crawl-delay: 2
 
 # Host
-Host: https://furniture-moving-blog.vercel.app
+Host: https://fmoving1.vercel.app
 
 # Sitemaps
-Sitemap: https://furniture-moving-blog.vercel.app/sitemap.xml
-Sitemap: https://furniture-moving-blog.vercel.app/sitemap-0.xml
+Sitemap: https://fmoving1.vercel.app/sitemap.xml
+Sitemap: https://fmoving1.vercel.app/sitemap-0.xml
