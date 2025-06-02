@@ -29,6 +29,7 @@ const IMAGE_MAPPING: Record<string, string> = {
   '/images/blog/moving-services-saudi-cities.jpg': '/images/blog/Furniture_Moving_Services.jpeg',
   '/images/blog/furniture-moving-tips.jpg': '/images/blog/Golden_Tips_for_a_Stress-Free.jpeg',
   '/images/blog/moving-day-checklist.jpg': '/images/blog/Ultimate_Checklist_Before_Moving_Day.jpeg',
+  '/images/blog/moving-furniture-hot-weather.jpg': '/images/blog/Moving_Furniture_in_Hot_Weather.jpeg',
   
   // مسارات الصور التي سببت الأخطاء
   '/images/Furniture_moving_Jeddah.jpeg': '/images/blog/Furniture_Moving_in_Jeddah.jpeg',
