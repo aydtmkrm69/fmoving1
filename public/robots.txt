@@ -24,4 +24,5 @@ Host: https://fmoving1.vercel.app
 
 # Sitemaps
 Sitemap: https://fmoving1.vercel.app/sitemap.xml
-Sitemap: https://fmoving1.vercel.app/sitemap-0.xml
+Sitemap: https://furniture-moving-blog.vercel.app/sitemap.xml
+Sitemap: https://furniture-moving-blog.vercel.app/sitemap-0.xml
