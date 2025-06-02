@@ -43,12 +43,6 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301)
   }
 
-  // إضافة trailing slash للمجلدات
-  if (url.pathname.endsWith('/blog') && !url.pathname.endsWith('/blog/')) {
-    url.pathname = url.pathname + '/'
-    return NextResponse.redirect(url, 301)
-  }
-
   // منع الوصول للملفات الحساسة
   if (url.pathname.startsWith('/api/admin') || 
       url.pathname.startsWith('/.env') ||
