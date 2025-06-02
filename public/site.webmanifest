@@ -11,38 +11,7 @@
   "lang": "ar",
   "dir": "rtl",
   "categories": ["business", "lifestyle", "productivity"],
-  "icons": [
-    {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ],
+  "icons": [],
   "screenshots": [
     {
       "src": "/images/screenshot-wide.png",
@@ -64,37 +33,19 @@
       "name": "المدونة",
       "short_name": "المدونة",
       "description": "تصفح مقالات المدونة",
-      "url": "/blog",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
+      "url": "/blog"
     },
     {
       "name": "اطلب عرض سعر",
       "short_name": "عرض سعر",
       "description": "احصل على عرض سعر مجاني",
-      "url": "/get-a-free-quote",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
+      "url": "/get-a-free-quote"
     },
     {
       "name": "تواصل معنا",
       "short_name": "تواصل",
       "description": "تواصل مع فريق الدعم",
-      "url": "/contact",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
+      "url": "/contact"
     }
   ],
   "related_applications": [],
