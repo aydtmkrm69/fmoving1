@@ -180,7 +180,7 @@ export default function BlogClientComponent({
                       <div>
                         <h4 className="font-medium line-clamp-2 text-gray-800">{post.title}</h4>
                         <p className="text-sm text-gray-500">
-                          {new Date(post.publishedAt).toLocaleDateString('ar-SA')}
+                          {formatDateArabic(post.publishedAt)}
                         </p>
                       </div>
                     </Link>
@@ -226,7 +226,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
             <div>
               <p className="font-medium">{post.author.name}</p>
               <p className="text-sm text-gray-500">
-                {new Date(post.publishedAt).toLocaleDateString('ar-SA')}
+                {formatDateArabic(post.publishedAt)}
               </p>
             </div>
           </div>
@@ -281,7 +281,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
             <div>
               <p className="font-medium">{post.author.name}</p>
               <p className="text-sm text-gray-500">
-                {new Date(post.publishedAt).toLocaleDateString('ar-SA')}
+                {formatDateArabic(post.publishedAt)}
               </p>
             </div>
           </div>

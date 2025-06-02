@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { posts } from '@/data/posts';
 import type { BlogPost } from '@/types/blog';
 import { resolveImagePath } from '@/utils/imageUtils';
+import { formatDateArabic } from '@/utils/dateUtils';
 
 type RelatedPostsProps = {
   currentPostId: string;
@@ -86,7 +87,7 @@ export default function RelatedPosts({ currentPostId, tags, maxPosts = 3 }: Rela
     // Post date
     const date = document.createElement('p');
     date.className = 'text-sm text-gray-500';
-    date.textContent = new Date(post.publishedAt).toLocaleDateString('ar-SA');
+    date.textContent = formatDateArabic(post.publishedAt);
     
     content.appendChild(title);
     content.appendChild(date);

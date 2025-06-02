@@ -8,6 +8,7 @@ import {
 import { MdSecurity, MdTimer, MdAttachMoney, MdLocationOn } from 'react-icons/md';
 import { BiSolidPackage, BiSolidTruck } from 'react-icons/bi';
 import { posts } from '@/data/posts';
+import { formatDateArabic } from '@/utils/dateUtils';
 import LazyLoad from '@/components/LazyLoad';
 import BlogPostSkeleton from '@/components/blog/BlogPostSkeleton';
 
@@ -295,7 +296,7 @@ export default function HomePage() {
                   <div className="p-6 flex-grow flex flex-col">
                     <div className="flex items-center text-sm text-gray-500 mb-2">
                       <FaRegClock className="mr-1" />
-                      <span>{new Date(post.publishedAt).toLocaleDateString('ar-SA')}</span>
+                      <span>{formatDateArabic(post.publishedAt)}</span>
                     </div>
                     <h3 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
                       <Link href={`/blog/${post.slug}`}>{post.title}</Link>

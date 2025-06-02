@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { BlogPost } from '@/types/blog';
 import LazyLoad from './LazyLoad';
 import { resolveImagePath } from '@/utils/imageUtils';
+import { formatDateArabic } from '@/utils/dateUtils';
 
 interface PostCardProps {
   post: BlogPost;
@@ -67,7 +68,7 @@ export default function PostCard({ post }: PostCardProps) {
             <div>
               <p className="font-medium text-gray-800">{post.author.name}</p>
               <p className="text-sm text-gray-500">
-                {new Date(post.publishedAt).toLocaleDateString('ar-SA')}
+                {formatDateArabic(post.publishedAt)}
               </p>
             </div>
           </div>

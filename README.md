@@ -1,88 +1,195 @@
-# مدونة نقل العفش (Furniture Moving Blog)
+# 🏠 مدونة نقل العفش - أفضل خدمات نقل الأثاث في السعودية
 
-![Banner de la página](public/images/blog/Furniture_Moving_Process.jpeg)
+[![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38B2AC)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000)](https://vercel.com/)
 
-## 📝 Descripción
+مدونة متخصصة في خدمات نقل العفش والأثاث في المملكة العربية السعودية. نقدم نصائح احترافية وإرشادات مفيدة لنقل الأثاث بأمان وبأفضل الأسعار.
 
-Una moderna aplicación web en árabe especializada en contenido sobre servicios de mudanza y transporte de muebles en Arabia Saudita. La plataforma proporciona:
+## 🌟 المميزات
 
-- Artículos informativos sobre mudanzas y transporte de muebles
-- Consejos profesionales para el embalaje y desembalaje
-- Información sobre servicios de mudanza en diferentes ciudades saudíes
-- Testimonios de clientes
+- ✅ **تصميم متجاوب** - يعمل بشكل مثالي على جميع الأجهزة
+- ✅ **محسن للسيو** - تحسين محركات البحث المتقدم
+- ✅ **سرعة عالية** - تحسين الأداء والتحميل السريع
+- ✅ **دعم اللغة العربية** - تصميم RTL كامل
+- ✅ **مقالات تفاعلية** - محتوى غني ومفيد
+- ✅ **Schema Markup** - بيانات منظمة لمحركات البحث
+- ✅ **PWA Ready** - تطبيق ويب تقدمي
+- ✅ **أمان عالي** - Headers أمنية متقدمة
 
-## 🚀 Tecnologías
+## 🚀 التقنيات المستخدمة
 
-- **Framework:** Next.js 14 (App Router)
-- **Lenguaje:** TypeScript
-- **Estilizado:** Tailwind CSS
-- **Componentes:** React
-- **Optimización SEO:** Metadatos estructurados, Open Graph, Twitter Cards
-- **Generación automática de sitemap**
+- **Framework**: Next.js 14.1.0 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons
+- **Font**: IBM Plex Sans Arabic
+- **Deployment**: Vercel
+- **SEO**: next-sitemap
+- **Performance**: Image Optimization, Code Splitting
 
-## ⚙️ Instalación y Uso
+## 📁 هيكل المشروع
 
-### Requisitos Previos
-- Node.js 18.17.0 o superior
-- npm o yarn
+```
+├── public/                 # الملفات العامة
+│   ├── images/            # الصور والوسائط
+│   ├── robots.txt         # ملف الروبوتات
+│   ├── sitemap.xml        # خريطة الموقع
+│   └── site.webmanifest   # ملف التطبيق
+├── src/
+│   ├── app/               # صفحات التطبيق (App Router)
+│   ├── components/        # المكونات القابلة لإعادة الاستخدام
+│   ├── content/           # محتوى المدونة (MDX)
+│   ├── data/              # البيانات الثابتة
+│   ├── types/             # تعريفات TypeScript
+│   └── utils/             # الوظائف المساعدة
+├── next.config.js         # إعدادات Next.js
+├── next-sitemap.config.js # إعدادات خريطة الموقع
+├── vercel.json           # إعدادات Vercel
+└── tailwind.config.js    # إعدادات Tailwind
+```
 
-### Instalación
+## 🛠️ التثبيت والتشغيل
 
+### المتطلبات
+- Node.js 18.0 أو أحدث
+- npm أو yarn
+
+### خطوات التثبيت
+
+1. **استنساخ المشروع**
 ```bash
-# Clonar el repositorio
 git clone https://github.com/your-username/furniture-moving-blog.git
-
-# Navegar al directorio
 cd furniture-moving-blog
+```
 
-# Instalar dependencias
+2. **تثبيت التبعيات**
+```bash
 npm install
-# o
+# أو
 yarn install
+```
 
-# Ejecutar en desarrollo
+3. **إعداد متغيرات البيئة**
+```bash
+cp .env.example .env.local
+```
+قم بتحديث القيم في `.env.local` حسب احتياجاتك.
+
+4. **تشغيل الخادم المحلي**
+```bash
 npm run dev
-# o
+# أو
 yarn dev
 ```
 
-### Compilación para producción
+5. **فتح المتصفح**
+انتقل إلى [http://localhost:3000](http://localhost:3000)
+
+## 📝 Scripts المتاحة
 
 ```bash
-# Compilar para producción
-npm run build
-# o
-yarn build
-
-# Iniciar el servidor de producción
-npm run start
-# o
-yarn start
+npm run dev          # تشغيل الخادم المحلي
+npm run build        # بناء المشروع للإنتاج
+npm run start        # تشغيل الخادم في وضع الإنتاج
+npm run lint         # فحص الكود
+npm run lint:fix     # إصلاح مشاكل الكود تلقائياً
+npm run type-check   # فحص أنواع TypeScript
+npm run sitemap      # إنشاء خريطة الموقع
+npm run clean        # تنظيف ملفات البناء
+npm run check        # فحص شامل للكود والأنواع
 ```
 
-## 🔍 SEO y Optimización
+## 🔧 إعدادات السيو
 
-El proyecto está completamente optimizado para SEO con:
+### خريطة الموقع (Sitemap)
+- يتم إنشاؤها تلقائياً عند البناء
+- تتضمن جميع الصفحات والمقالات
+- محسنة لمحركات البحث العربية
 
-- Meta tags apropiados para cada página
-- Schema.org (JSON-LD) para estructuración de datos
-- Open Graph para compartir en redes sociales
+### Schema Markup
+- Organization Schema
+- Article Schema
+- Breadcrumb Schema
+- Website Schema
+
+### Meta Tags
+- Open Graph للشبكات الاجتماعية
 - Twitter Cards
-- Sitemap.xml generado automáticamente
-- Archivo robots.txt optimizado
+- تحسين للمحمول
+- دعم PWA
 
-## 🔄 CI/CD
+## 🚀 النشر على Vercel
 
-El sitio está configurado para despliegue automático en Netlify desde el repositorio GitHub.
+1. **ربط المشروع بـ Vercel**
+```bash
+npm i -g vercel
+vercel
+```
 
-## 📱 Responsividad
+2. **إعداد متغيرات البيئة في Vercel**
+- انتقل إلى لوحة تحكم Vercel
+- أضف متغيرات البيئة من `.env.example`
 
-El diseño es completamente adaptable a dispositivos móviles, tablets y escritorio.
+3. **النشر التلقائي**
+- يتم النشر تلقائياً عند push إلى main branch
 
-## 📄 Licencia
+## 📊 تحسين الأداء
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+- **Image Optimization**: تحسين الصور تلقائياً
+- **Code Splitting**: تقسيم الكود للتحميل السريع
+- **Lazy Loading**: تحميل المحتوى عند الحاجة
+- **Caching**: تخزين مؤقت متقدم
+- **Compression**: ضغط الملفات
 
-## 👥 Autores
+## 🔒 الأمان
 
-- [Tu Nombre](https://github.com/your-username) - Desarrollador Principal 
+- Security Headers
+- XSS Protection
+- CSRF Protection
+- Content Security Policy
+- HTTPS Only
+
+## 📱 دعم PWA
+
+- Service Worker
+- Offline Support
+- Install Prompt
+- App-like Experience
+
+## 🌐 دعم اللغات
+
+- العربية (الأساسية)
+- RTL Layout
+- Arabic Fonts
+- Localized Content
+
+## 📈 Analytics والتتبع
+
+- Google Analytics (اختياري)
+- Search Console Integration
+- Performance Monitoring
+- Error Tracking
+
+## 🤝 المساهمة
+
+نرحب بالمساهمات! يرجى قراءة [دليل المساهمة](CONTRIBUTING.md) قبل البدء.
+
+## 📄 الترخيص
+
+هذا المشروع مرخص تحت [MIT License](LICENSE).
+
+## 📞 التواصل
+
+- **الموقع**: [https://furniture-moving-blog.vercel.app](https://furniture-moving-blog.vercel.app)
+- **البريد الإلكتروني**: info@furniture-moving-blog.com
+- **تويتر**: [@furniture_moving_sa](https://twitter.com/furniture_moving_sa)
+
+## 🙏 شكر وتقدير
+
+شكر خاص لجميع المساهمين والمطورين الذين ساعدوا في تطوير هذا المشروع.
+
+---
+
+**تم تطويره بـ ❤️ في المملكة العربية السعودية**

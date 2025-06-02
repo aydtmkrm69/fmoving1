@@ -145,7 +145,7 @@ export default function BlogSidebar({ post }: BlogSidebarProps) {
                     {relatedPost.title}
                   </h4>
                   <p className="text-sm text-gray-500">
-                    {new Date(relatedPost.publishedAt).toLocaleDateString('ar-SA')}
+                    {formatDateArabic(relatedPost.publishedAt)}
                   </p>
                 </div>
               </Link>

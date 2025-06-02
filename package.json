@@ -4,10 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "postbuild": "next-sitemap",
+    "sitemap": "next-sitemap",
+    "analyze": "cross-env ANALYZE=true next build",
+    "clean": "rimraf .next out",
+    "export": "next export",
+    "preview": "next build && next start",
+    "check": "npm run type-check && npm run lint"
   },
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

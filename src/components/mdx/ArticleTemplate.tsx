@@ -8,6 +8,7 @@ import LazyLoad from '../LazyLoad';
 import BlogSidebar from './BlogSidebar';
 import { useEffect } from 'react';
 import { resolveImagePath } from '@/utils/imageUtils';
+import { formatDateArabic, formatDateISO } from '@/utils/dateUtils';
 import Script from 'next/script';
 import { SITE_URL, generateArticleSchema, generateBreadcrumbSchema } from '@/utils/seo';
 
@@ -204,8 +205,8 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
                 <div>
                   <p className="font-medium">{post.author.name}</p>
                   <p className="text-sm text-white/70">
-                    <time dateTime={new Date(post.publishedAt).toISOString()}>
-                      {new Date(post.publishedAt).toLocaleDateString('ar-SA')}
+                    <time dateTime={formatDateISO(post.publishedAt)}>
+                      {formatDateArabic(post.publishedAt)}
                     </time>
                   </p>
                 </div>

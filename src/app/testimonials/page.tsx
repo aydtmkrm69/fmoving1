@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { FaStar, FaQuoteRight, FaArrowLeft } from 'react-icons/fa';
+import { formatDateArabic } from '@/utils/dateUtils';
 
 export const metadata: Metadata = {
   title: 'آراء وشهادات العملاء - شركة نقل العفش',
@@ -241,7 +242,7 @@ function TestimonialCard({ testimonial }: { testimonial: any }) {
               ))}
             </div>
             <div className="text-gray-500 text-sm">
-              {new Date(testimonial.date).toLocaleDateString('ar-SA')}
+              {formatDateArabic(testimonial.date)}
             </div>
           </div>
         </div>
