@@ -7,6 +7,7 @@ import { FiTag } from 'react-icons/fi';
 import { posts } from '@/data/posts';
 import type { BlogPost } from '@/types/blog';
 import { resolveImagePath } from '@/utils/imageUtils';
+import { formatDateArabic } from '@/utils/dateUtils';
 
 type BlogSidebarProps = {
   post: BlogPost;

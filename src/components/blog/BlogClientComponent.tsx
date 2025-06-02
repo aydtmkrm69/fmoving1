@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FiSearch, FiClock, FiTag } from 'react-icons/fi';
 import type { BlogPost } from '@/types/blog';
+import { formatDateArabic } from '@/utils/dateUtils';
 import Script from 'next/script';
 import LazyLoad from '../LazyLoad';
 import BlogPostSkeleton from './BlogPostSkeleton';
