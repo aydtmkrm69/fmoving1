@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import SafeImage from '@/components/SafeImage';
+import Image from 'next/image';
 import Link from 'next/link';
 import { 
   FaMapMarkerAlt, FaPhone, FaEnvelope, 
   FaClock, FaCheckCircle, FaQuestion,
-  FaHeadset
+  FaHeadset, FaExternalLinkAlt
 } from 'react-icons/fa';
 
 export default function ContactPage() {
@@ -100,12 +100,13 @@ export default function ContactPage() {
       {/* Enhanced Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">
         <div className="absolute inset-0 brightness-50">
-          <SafeImage
-            src="/images/Furniture_moving_company.jpeg"
+          <Image
+            src="/images/blog/Furniture_Moving_Process.jpeg"
             alt="اتصل بنا"
             fill
             priority
             className="object-cover"
+            unoptimized={true}
           />
         </div>
         <div className="absolute inset-0 flex items-center">
@@ -317,20 +318,49 @@ export default function ContactPage() {
           </div>
         </div>
         
-        {/* Google Map */}
+        {/* Location Section with Map Alternative */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-6">موقعنا</h2>
-          <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-md">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3234507539267!2d46.726444276030774!3d24.713861275305195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sKing%20Abdulaziz%20Rd%2C%20Al%20Malaz%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1696847048396!5m2!1sen!2s" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="موقع الشركة على الخريطة"
-              aria-label="موقع الشركة على الخريطة"
-            ></iframe>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="relative h-[400px] bg-gradient-to-br from-blue-100 to-blue-200">
+              <Image
+                src="/images/blog/Best_Furniture_Moving_Company.jpeg"
+                alt="موقع الشركة"
+                fill
+                className="object-cover opacity-30"
+                unoptimized={true}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+                  <FaMapMarkerAlt className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">مقر الشركة</h3>
+                  <p className="text-gray-600 mb-6 max-w-md">
+                    حي الملز، طريق الملك عبدالعزيز<br />
+                    الرياض، المملكة العربية السعودية
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href="https://www.google.com/maps/place/King+Abdulaziz+Rd,+Al+Malaz,+Riyadh+Saudi+Arabia/@24.7138613,46.7264443,17z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+                    >
+                      <FaExternalLinkAlt className="ml-2" />
+                      فتح في خرائط جوجل
+                    </a>
+                    <a
+                      href="https://maps.apple.com/?q=King+Abdulaziz+Rd,+Al+Malaz,+Riyadh+Saudi+Arabia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center"
+                    >
+                      <FaExternalLinkAlt className="ml-2" />
+                      فتح في خرائط آبل
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
