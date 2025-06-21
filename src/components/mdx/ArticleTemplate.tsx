@@ -11,6 +11,7 @@ import { resolveImagePath } from '@/utils/imageUtils';
 import { formatDateArabic, formatDateISO } from '@/utils/dateUtils';
 import Script from 'next/script';
 import { SITE_URL, generateArticleSchema, generateBreadcrumbSchema } from '@/utils/seo';
+import React from 'react';
 
 type ArticleTemplateProps = {
   post: BlogPost;
@@ -94,25 +95,7 @@ function SidebarSkeleton() {
 export default function ArticleTemplate({ post, content }: ArticleTemplateProps) {
   // Helper function to render different types of content
   const renderContent = () => {
-    // If content is a string, render it as HTML with corrected image paths
-    if (typeof content === 'string') {
-      // Fix image paths in the HTML content
-      let fixedContent = content;
-      
-      // Look for img tags with src attributes
-      const imgSrcRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi;
-      
-      // Replace each image path with a corrected one
-      fixedContent = fixedContent.replace(imgSrcRegex, (match, src) => {
-        // Use resolveImagePath from our utils
-        const resolvedSrc = resolveImagePath(src, post.title);
-        return match.replace(src, resolvedSrc);
-      });
-      
-      return <div dangerouslySetInnerHTML={{ __html: fixedContent }} />;
-    }
-    
-    // If content is a React node, render it directly
+    // Simply return the content as is - it should be React elements
     return content;
   };
 
@@ -231,76 +214,61 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           <div className="lg:col-span-3">
             {/* Author Card */}
-            <LazyLoad 
-              placeholder={<AuthorCardSkeleton />}
-              rootMargin="50px 0px"
-            >
-              <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-                <div className="flex items-start space-x-6 space-x-reverse">
-                  <div className="relative w-24 h-24 flex-shrink-0">
-                    <Image
-                      src={authorImage}
-                      alt={post.author.name}
-                      fill
-                      loading="lazy"
-                      className="object-cover rounded-lg"
-                      sizes="96px"
-                      unoptimized={true}
-                    />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-bold mb-2 text-gray-800">{post.author.name}</h2>
-                    <p className="text-gray-600 mb-3">{post.author.bio}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {post.author.credentials.map((credential, index) => (
-                        <span
-                          key={index}
-                          className="bg-blue-50 text-blue-600 text-sm px-3 py-1 rounded-full"
-                        >
-                          {credential}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+              <div className="flex items-start space-x-6 space-x-reverse">
+                <div className="relative w-24 h-24 flex-shrink-0">
+                  <Image
+                    src={authorImage}
+                    alt={post.author.name}
+                    fill
+                    loading="lazy"
+                    className="object-cover rounded-lg"
+                    sizes="96px"
+                    unoptimized={true}
+                  />
                 </div>
-              </div>
-            </LazyLoad>
-
-            {/* Article Content */}
-            <LazyLoad 
-              placeholder={<ContentSkeleton />}
-              rootMargin="100px 0px"
-            >
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <div className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-lg prose-img:my-8 text-gray-800">
-                  {renderContent()}
-                </div>
-
-                {/* Tags */}
-                <div className="mt-8 pt-8 border-t">
-                  <h3 className="text-lg font-bold mb-4 text-gray-800">الوسوم:</h3>
+                <div>
+                  <h2 className="text-xl font-bold mb-2 text-gray-800">{post.author.name}</h2>
+                  <p className="text-gray-600 mb-3">{post.author.bio}</p>
                   <div className="flex flex-wrap gap-2">
-                    {post.tags.map((tag) => (
+                    {post.author.credentials.map((credential, index) => (
                       <span
-                        key={tag}
-                        className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                        key={index}
+                        className="bg-blue-50 text-blue-600 text-sm px-3 py-1 rounded-full"
                       >
-                        {tag}
+                        {credential}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
-            </LazyLoad>
+            </div>
+
+            {/* Article Content */}
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <div className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-lg prose-img:my-8 text-gray-800">
+                {renderContent()}
+              </div>
+
+              {/* Tags */}
+              <div className="mt-8 pt-8 border-t">
+                <h3 className="text-lg font-bold mb-4 text-gray-800">الوسوم:</h3>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar */}
-          <LazyLoad 
-            placeholder={<SidebarSkeleton />}
-            rootMargin="50px 0px"
-          >
-            <BlogSidebar post={post} />
-          </LazyLoad>
+          <BlogSidebar post={post} />
         </div>
       </div>
     </article>
