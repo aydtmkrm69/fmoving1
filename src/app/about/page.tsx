@@ -159,6 +159,7 @@ export default function AboutPage() {
             fill
             priority
             className="object-cover"
+            unoptimized={true}
           />
         </div>
         <div className="absolute inset-0 flex items-center">
@@ -195,6 +196,7 @@ export default function AboutPage() {
                   alt="خدمات نقل العفش"
                   fill
                   className="object-cover"
+                  unoptimized={true}
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-blue-600 text-white p-8 rounded-lg shadow-lg">
@@ -306,6 +308,7 @@ export default function AboutPage() {
                     fill
                     className="object-cover object-top"
                     loading="lazy"
+                    unoptimized={true}
                   />
                 </div>
                 <div className="p-6">
@@ -370,6 +373,7 @@ export default function AboutPage() {
                       fill
                       className="object-cover"
                       loading="lazy"
+                      unoptimized={true}
                     />
                   </div>
                   <div>
