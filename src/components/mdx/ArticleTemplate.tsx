@@ -162,7 +162,7 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
 
             {/* Article Content - Direct render without any processing */}
             <div className="bg-white rounded-lg shadow-md p-8">
-              <div className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-lg prose-img:my-8 text-gray-800">
+              <div className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-lg prose-img:my-8 text-gray-800" suppressHydrationWarning>
                 {content}
               </div>
 
