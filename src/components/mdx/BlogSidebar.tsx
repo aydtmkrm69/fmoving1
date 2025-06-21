@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiTag } from 'react-icons/fi';
@@ -14,114 +12,20 @@ type BlogSidebarProps = {
 };
 
 export default function BlogSidebar({ post }: BlogSidebarProps) {
-  const [headings, setHeadings] = useState<{id: string; text: string; level: number}[]>([]);
-  const [activeHeading, setActiveHeading] = useState<string>('');
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
-  
-  // Extract headings from the article content
-  useEffect(() => {
-    const articleContent = document.querySelector('.prose');
-    if (!articleContent) return;
-    
-    const headingElements = articleContent.querySelectorAll('h2, h3, h4');
-    const extractedHeadings: {id: string; text: string; level: number}[] = [];
-    
-    headingElements.forEach((heading, index) => {
-      // Generate IDs for headings if they don't have one
-      if (!heading.id) {
-        const id = `heading-${index}`;
-        heading.id = id;
-      }
-      
-      extractedHeadings.push({
-        id: heading.id,
-        text: heading.textContent || '',
-        level: parseInt(heading.tagName.charAt(1))
-      });
-    });
-    
-    setHeadings(extractedHeadings);
-    
-    // Set up intersection observer for active heading detection
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveHeading(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '0px 0px -70% 0px',
-        threshold: 0.1
-      }
-    );
-    
-    headingElements.forEach(heading => {
-      observer.observe(heading);
-    });
-    
-    return () => {
-      headingElements.forEach(heading => {
-        observer.unobserve(heading);
-      });
-    };
-  }, []);
-  
-  // Find related posts based on tags
-  useEffect(() => {
-    const related = posts
-      .filter(p => p.id !== post.id)
-      .map(p => ({
-        post: p,
-        score: p.tags.filter(tag => post.tags.includes(tag)).length
-      }))
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3)
-      .map(item => item.post);
-    
-    setRelatedPosts(related);
-  }, [post]);
-  
-  // Scroll to heading when clicked
-  const scrollToHeading = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  // Find related posts based on tags (server-side)
+  const relatedPosts = posts
+    .filter(p => p.id !== post.id)
+    .map(p => ({
+      post: p,
+      score: p.tags.filter(tag => post.tags.includes(tag)).length
+    }))
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(item => item.post);
   
   return (
     <aside className="space-y-8">
-      {/* Table of Contents */}
-      <div className="bg-white rounded-lg shadow-md p-6 sticky top-4">
-        <h3 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2">محتويات المقال</h3>
-        {headings.length > 0 ? (
-          <nav className="space-y-2">
-            {headings.map((heading) => (
-              <div key={heading.id} className="mb-1">
-                <button
-                  onClick={() => scrollToHeading(heading.id)}
-                  className={`text-right w-full ${
-                    heading.level === 2 ? 'font-medium' : 
-                    heading.level === 3 ? 'mr-3 text-sm' : 'mr-5 text-sm'
-                  } ${
-                    activeHeading === heading.id
-                      ? 'text-blue-600 font-medium'
-                      : 'text-gray-700 hover:text-blue-600'
-                  } transition-colors py-1 block`}
-                >
-                  {heading.text}
-                </button>
-              </div>
-            ))}
-          </nav>
-        ) : (
-          <p className="text-gray-500 text-center py-3">جاري تحميل المحتويات...</p>
-        )}
-      </div>
-
       {/* Related Posts */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <h3 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2">مقالات ذات صلة</h3>
@@ -140,6 +44,7 @@ export default function BlogSidebar({ post }: BlogSidebarProps) {
                     fill
                     className="object-cover"
                     unoptimized={true}
+                    sizes="64px"
                   />
                 </div>
                 <div className="flex-1">
@@ -183,6 +88,31 @@ export default function BlogSidebar({ post }: BlogSidebarProps) {
         >
           {post.category}
         </Link>
+      </div>
+
+      {/* Quick Navigation */}
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h3 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2">التنقل السريع</h3>
+        <div className="space-y-2">
+          <Link
+            href="/blog"
+            className="block text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            ← العودة إلى المدونة
+          </Link>
+          <Link
+            href="/get-a-free-quote"
+            className="block text-blue-600 hover:text-blue-800 font-medium transition-colors"
+          >
+            ← احصل على عرض سعر مجاني
+          </Link>
+          <Link
+            href="/services"
+            className="block text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            ← تصفح خدماتنا
+          </Link>
+        </div>
       </div>
     </aside>
   );

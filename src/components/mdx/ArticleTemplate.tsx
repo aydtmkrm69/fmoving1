@@ -4,9 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FiClock, FiTag, FiArrowRight } from 'react-icons/fi';
 import type { BlogPost } from '@/types/blog';
-import LazyLoad from '../LazyLoad';
 import BlogSidebar from './BlogSidebar';
-import { useEffect } from 'react';
 import { resolveImagePath } from '@/utils/imageUtils';
 import { formatDateArabic, formatDateISO } from '@/utils/dateUtils';
 import Script from 'next/script';
@@ -18,87 +16,7 @@ type ArticleTemplateProps = {
   content: React.ReactNode;
 };
 
-// Author card skeleton
-function AuthorCardSkeleton() {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-      <div className="flex items-start space-x-6 space-x-reverse">
-        <div className="w-24 h-24 bg-gray-200 animate-pulse rounded-lg"></div>
-        <div className="w-full">
-          <div className="h-6 w-40 bg-gray-200 animate-pulse rounded mb-3"></div>
-          <div className="h-4 w-full bg-gray-200 animate-pulse rounded mb-2"></div>
-          <div className="h-4 w-3/4 bg-gray-200 animate-pulse rounded mb-4"></div>
-          <div className="flex flex-wrap gap-2">
-            <div className="h-5 w-20 bg-blue-50 animate-pulse rounded-full"></div>
-            <div className="h-5 w-24 bg-blue-50 animate-pulse rounded-full"></div>
-            <div className="h-5 w-32 bg-blue-50 animate-pulse rounded-full"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Content skeleton
-function ContentSkeleton() {
-  return (
-    <div className="bg-white rounded-lg shadow-md p-8">
-      <div className="space-y-4">
-        <div className="h-6 w-full bg-gray-200 animate-pulse rounded"></div>
-        <div className="h-4 w-full bg-gray-200 animate-pulse rounded"></div>
-        <div className="h-4 w-5/6 bg-gray-200 animate-pulse rounded"></div>
-        <div className="h-4 w-full bg-gray-200 animate-pulse rounded"></div>
-        <div className="h-40 bg-gray-200 animate-pulse rounded my-8"></div>
-        <div className="h-4 w-full bg-gray-200 animate-pulse rounded"></div>
-        <div className="h-4 w-4/5 bg-gray-200 animate-pulse rounded"></div>
-        <div className="h-4 w-full bg-gray-200 animate-pulse rounded"></div>
-      </div>
-    </div>
-  );
-}
-
-// Sidebar skeleton
-function SidebarSkeleton() {
-  return (
-    <div className="space-y-8">
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="h-6 w-40 bg-gray-200 animate-pulse rounded mb-4"></div>
-        <div className="space-y-2">
-          <div className="h-4 w-full bg-gray-200 animate-pulse rounded"></div>
-          <div className="h-4 w-4/5 bg-gray-200 animate-pulse rounded"></div>
-          <div className="h-4 w-3/4 bg-gray-200 animate-pulse rounded"></div>
-        </div>
-      </div>
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="h-6 w-40 bg-gray-200 animate-pulse rounded mb-4"></div>
-        <div className="space-y-4">
-          <div className="flex items-start space-x-4 space-x-reverse">
-            <div className="w-16 h-16 bg-gray-200 animate-pulse rounded-lg"></div>
-            <div className="flex-1">
-              <div className="h-4 w-full bg-gray-200 animate-pulse rounded mb-2"></div>
-              <div className="h-3 w-24 bg-gray-200 animate-pulse rounded"></div>
-            </div>
-          </div>
-          <div className="flex items-start space-x-4 space-x-reverse">
-            <div className="w-16 h-16 bg-gray-200 animate-pulse rounded-lg"></div>
-            <div className="flex-1">
-              <div className="h-4 w-full bg-gray-200 animate-pulse rounded mb-2"></div>
-              <div className="h-3 w-24 bg-gray-200 animate-pulse rounded"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function ArticleTemplate({ post, content }: ArticleTemplateProps) {
-  // Helper function to render different types of content
-  const renderContent = () => {
-    // Simply return the content as is - it should be React elements
-    return content;
-  };
-
   // Resolve the hero image path
   const heroImage = resolveImagePath(post.image, post.title);
   // Resolve the author image path
@@ -247,7 +165,7 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
             {/* Article Content */}
             <div className="bg-white rounded-lg shadow-md p-8">
               <div className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-lg prose-img:my-8 text-gray-800">
-                {renderContent()}
+                {content}
               </div>
 
               {/* Tags */}
