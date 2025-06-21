@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from '@/components/mdx/Image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'خدمات نقل العفش من وإلى المدن السعودية الرئيسية',
     description: 'دليل شامل لخدمات نقل العفش بين المدن السعودية الرئيسية مثل الرياض وجدة والدمام ومكة والمدينة، مع نصائح لاختيار أفضل شركة نقل وأسعار وخدمات مقارنة.',
-    images: ['/images/blog/moving-services-saudi-cities.jpg'],
+    images: ['/images/blog/intercity-moving.jpg'],
   },
 };
 
@@ -17,14 +17,11 @@ export default function BlogPost() {
     <article className="max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4 text-center">خدمات نقل العفش من وإلى المدن السعودية الرئيسية: (الرياض، جدة، الدمام، مكة، المدينة)</h1>
       
-      <div className="relative w-full h-80 my-8 rounded-lg overflow-hidden">
-        <Image 
-          src="/images/blog/moving-services-saudi-cities.jpg" 
-          alt="خدمات نقل العفش بين المدن السعودية الرئيسية" 
-          fill
-          className="object-cover"
-        />
-      </div>
+      <Image
+        src="/images/blog/intercity-moving.jpg"
+        alt="خدمات نقل العفش بين المدن السعودية الرئيسية"
+        caption="دليل شامل لخدمات النقل بين المدن الرئيسية في المملكة العربية السعودية"
+      />
 
       <div className="prose prose-lg max-w-none leading-relaxed text-right">
         <p className="font-bold text-xl mb-6">
@@ -45,6 +42,12 @@ export default function BlogPost() {
           <li>احتمالية التأثر بحالة الطقس والطرق بين المدن</li>
           <li>الحاجة لتصاريح مرور في بعض الطرق والمدن</li>
         </ul>
+
+        <Image
+          src="/images/blog/saudi-highways.jpg"
+          alt="الطرق السريعة السعودية للنقل"
+          caption="شبكة الطرق السريعة المتطورة تسهل عملية النقل بين المدن السعودية"
+        />
 
         <h2>أهم الطرق بين المدن السعودية الرئيسية وخصائصها</h2>
         
@@ -97,6 +100,12 @@ export default function BlogPost() {
           <li>موسم النقل (الأسعار تزيد في المواسم المزدحمة)</li>
           <li>نوع المركبة المستخدمة في النقل</li>
         </ul>
+
+        <Image
+          src="/images/blog/moving-costs.jpg"
+          alt="تكاليف نقل العفش بين المدن"
+          caption="العوامل المؤثرة على أسعار نقل العفش بين المدن السعودية"
+        />
 
         <table className="w-full border-collapse my-6">
           <thead>
@@ -159,6 +168,12 @@ export default function BlogPost() {
           <li>النقل في شاحنات مكيفة للحفاظ على الأثاث الحساس</li>
         </ul>
 
+        <Image
+          src="/images/blog/specialized-trucks.jpg"
+          alt="شاحنات نقل متخصصة"
+          caption="أسطول من الشاحنات المجهزة خصيصاً لنقل العفش بأمان عبر المسافات الطويلة"
+        />
+
         <h2>أفضل الممارسات لنقل العفش بين المدن السعودية</h2>
         
         <h3>1. التخطيط المسبق</h3>
@@ -185,6 +200,12 @@ export default function BlogPost() {
           <li>التأكد من جاهزية المنزل الجديد قبل وصول الأثاث</li>
           <li>طلب صور للأثاث بعد التحميل للتأكد من سلامة التغليف والترتيب</li>
         </ul>
+
+        <Image
+          src="/images/blog/long-distance-packing.jpg"
+          alt="تغليف للمسافات الطويلة"
+          caption="تقنيات تغليف متخصصة لحماية الأثاث أثناء النقل لمسافات طويلة"
+        />
 
         <h2>خصائص خدمات نقل العفش في كل مدينة رئيسية</h2>
         
@@ -221,6 +242,12 @@ export default function BlogPost() {
           <li>خدمات خاصة للمعتمرين والحجاج المقيمين</li>
         </ul>
 
+        <Image
+          src="/images/blog/saudi-cities-map.jpg"
+          alt="خريطة المدن السعودية الرئيسية"
+          caption="التوزيع الجغرافي للمدن السعودية الرئيسية وشبكة الطرق الرابطة بينها"
+        />
+
         <h2>معايير اختيار شركة نقل عفش للتنقل بين المدن</h2>
         
         <p>
@@ -253,6 +280,12 @@ export default function BlogPost() {
           <li>معلومات التواصل الكاملة مع المشرفين وقائدي الشاحنات</li>
         </ul>
 
+        <Image
+          src="/images/blog/moving-documentation.jpg"
+          alt="مستندات نقل العفش"
+          caption="الوثائق والمستندات الضرورية لضمان عملية نقل قانونية وآمنة"
+        />
+
         <h2>نصائح عملية للانتقال بين المدن السعودية</h2>
         
         <ul className="list-disc list-inside mr-6 mb-4">
@@ -276,6 +309,12 @@ export default function BlogPost() {
         <p>
           احتاجت شركة متوسطة الحجم لنقل مكاتبها (20 موظفاً) من الدمام إلى الرياض. تم اختيار شركة نقل توفر خدمات متخصصة للشركات. تم التخطيط للنقل خلال عطلة نهاية الأسبوع لتقليل تعطل العمل. شملت العملية تغليفاً خاصاً للأجهزة الإلكترونية والملفات المهمة، ونقل الأثاث المكتبي بعد تفكيكه. تم إعادة تركيب جميع المعدات في المكتب الجديد بالرياض، وكانت الشركة جاهزة للعمل في يوم العمل التالي دون تأخير.
         </p>
+
+        <Image
+          src="/images/blog/successful-moves.jpg"
+          alt="قصص نجاح نقل العفش"
+          caption="تجارب ناجحة لعملاء انتقلوا بين المدن السعودية بسلاسة وأمان"
+        />
 
         <h2>الخلاصة</h2>
         <p>

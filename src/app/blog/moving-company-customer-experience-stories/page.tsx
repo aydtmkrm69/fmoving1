@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from '@/components/mdx/Image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'تجربتي مع شركة نقل عفش X: كيف يمكن لقصص العملاء أن تساعدك في الاختيار',
     description: 'تجارب واقعية مع شركات نقل العفش في السعودية ودورها في مساعدتك على اختيار الشركة المناسبة. قصص نجاح وتحديات من تجارب حقيقية لعملاء سابقين.',
-    images: ['/images/blog/customer-experience-stories.jpg'],
+    images: ['/images/blog/customer-experience.jpg'],
   },
 };
 
@@ -17,14 +17,11 @@ export default function BlogPost() {
     <article className="max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4 text-center">تجربتي مع شركة نقل عفش X: كيف يمكن لقصص العملاء أن تساعدك في الاختيار</h1>
       
-      <div className="relative w-full h-80 my-8 rounded-lg overflow-hidden">
-        <Image 
-          src="/images/blog/customer-experience-stories.jpg" 
-          alt="تجارب العملاء مع شركات نقل العفش" 
-          fill
-          className="object-cover"
-        />
-      </div>
+      <Image
+        src="/images/blog/customer-experience.jpg"
+        alt="تجارب العملاء مع شركات نقل العفش"
+        caption="قصص واقعية من العملاء تساعدك في اختيار أفضل شركة نقل عفش"
+      />
 
       <div className="prose prose-lg max-w-none leading-relaxed text-right">
         <p className="font-bold text-xl mb-6">
@@ -44,6 +41,12 @@ export default function BlogPost() {
           <li>توفر معلومات عن تعامل الشركة مع المواقف غير المتوقعة</li>
           <li>تعكس مدى التزام الشركة بوعودها ومواعيدها</li>
         </ul>
+
+        <Image
+          src="/images/blog/choosing-moving-company.jpg"
+          alt="اختيار شركة نقل عفش موثوقة"
+          caption="العوامل المهمة عند اختيار شركة نقل العفش المناسبة"
+        />
 
         <h2>تجارب إيجابية مع شركات نقل العفش في السعودية</h2>
         
@@ -73,6 +76,12 @@ export default function BlogPost() {
           <li>السعر الأعلى أحياناً يعني خدمة أفضل وراحة بال</li>
         </ul>
 
+        <Image
+          src="/images/blog/valuables-moving.jpg"
+          alt="نقل القطع الثمينة والتحف"
+          caption="تقنيات خاصة لحماية القطع الثمينة والأعمال الفنية أثناء النقل"
+        />
+
         <h2>تجارب تحتوي على تحديات وكيفية تعامل الشركات معها</h2>
         
         <h3>تجربة محمد من الدمام: التأخير وحل المشكلات</h3>
@@ -100,6 +109,12 @@ export default function BlogPost() {
           <li>المتابعة المستمرة مهمة في حالة وجود مشكلة</li>
           <li>قدرة الشركة على الاعتراف بالخطأ وتصحيحه تعكس مصداقيتها</li>
         </ul>
+
+        <Image
+          src="/images/blog/furniture-insurance.jpg"
+          alt="تأمين الأثاث أثناء النقل"
+          caption="أهمية التأمين والتوثيق لحماية ممتلكاتك أثناء عملية النقل"
+        />
 
         <h2>كيفية الاستفادة من تجارب العملاء عند اختيار شركة نقل عفش</h2>
         
@@ -131,6 +146,12 @@ export default function BlogPost() {
           <li>"هل تقدمون خدمات إضافية مثل فك وتركيب الأثاث المعقد؟"</li>
         </ul>
 
+        <Image
+          src="/images/blog/important-questions.jpg"
+          alt="أسئلة مهمة لشركة النقل"
+          caption="الأسئلة الأساسية التي يجب طرحها على شركة النقل قبل التعاقد"
+        />
+
         <h2>تجاربنا الشخصية: ما تعلمناه من تقديم خدمات نقل العفش</h2>
         
         <p>
@@ -158,6 +179,12 @@ export default function BlogPost() {
           <li>مشاركة تجربتك على منصات التقييم مع ذكر التفاصيل المهمة</li>
           <li>الإشارة إلى نقاط القوة والضعف بموضوعية</li>
         </ul>
+
+        <Image
+          src="/images/blog/moving-testimonials.jpg"
+          alt="مشاركة تجارب النقل"
+          caption="أهمية مشاركة تجربتك لمساعدة الآخرين في اتخاذ قرارات مستنيرة"
+        />
 
         <h2>الخلاصة</h2>
         <p>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from '@/components/mdx/Image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'جدولك الزمني المتكامل لعملية نقل عفش منظمة وفعالة',
     description: 'خطة زمنية شاملة لتنظيم عملية نقل العفش بكفاءة، من التخطيط المبكر قبل شهرين وحتى ما بعد الانتقال، مع نصائح وقوائم مراجعة لكل مرحلة',
-    images: ['/images/blog/complete-timeline-furniture-moving.jpg'],
+    images: ['/images/blog/moving-checklist.jpg'],
   },
 };
 
@@ -17,14 +17,11 @@ export default function BlogPost() {
     <article className="max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4 text-center">جدولك الزمني المتكامل لعملية نقل عفش منظمة وفعالة</h1>
       
-      <div className="relative w-full h-80 my-8 rounded-lg overflow-hidden">
-        <Image 
-          src="/images/blog/complete-timeline-furniture-moving.jpg" 
-          alt="جدول زمني منظم لعملية نقل العفش" 
-          fill
-          className="object-cover"
-        />
-      </div>
+      <Image
+        src="/images/blog/moving-checklist.jpg"
+        alt="جدول زمني منظم لعملية نقل العفش"
+        caption="خطة زمنية متكاملة لتنظيم عملية النقل بكفاءة عالية"
+      />
 
       <div className="prose prose-lg max-w-none leading-relaxed text-right">
         <p className="font-bold text-xl mb-6">
@@ -94,17 +91,11 @@ export default function BlogPost() {
           </li>
         </ol>
         
-        <div className="relative w-full h-60 my-8 rounded-lg overflow-hidden">
-          <Image 
-            src="/images/blog/moving-budget-planning.jpg" 
-            alt="تخطيط ميزانية نقل العفش" 
-            fill
-            className="object-cover"
-          />
-          <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm text-center">
-            تحديد ميزانية واضحة في بداية عملية التخطيط يساعد على اتخاذ قرارات أكثر دقة
-          </p>
-        </div>
+        <Image
+          src="/images/blog/moving-prices.jpg"
+          alt="تخطيط ميزانية نقل العفش"
+          caption="تحديد ميزانية واضحة في بداية عملية التخطيط يساعد على اتخاذ قرارات أكثر دقة"
+        />
         
         <h2>المرحلة الثانية: قبل موعد الانتقال بـ 6 أسابيع</h2>
         
@@ -155,6 +146,12 @@ export default function BlogPost() {
           <p>لا تنتظر حتى آخر لحظة لإبلاغ شركات الخدمات بالانتقال. بعض الشركات تحتاج إلى إشعار مسبق بفترة طويلة، وقد يؤدي التأخير إلى انقطاع الخدمة أو دفع رسوم إضافية لتفعيلها بشكل عاجل في المنزل الجديد.</p>
         </div>
         
+        <Image
+          src="/images/blog/unwanted-items.jpg"
+          alt="فرز الأغراض قبل النقل"
+          caption="تنظيم الأغراض والتخلص من غير المطلوب يقلل من تكلفة ووقت عملية النقل"
+        />
+        
         <h2>المرحلة الثالثة: قبل موعد الانتقال بـ 4 أسابيع</h2>
         
         <ul className="list-disc list-inside mr-6 mb-4">
@@ -195,17 +192,11 @@ export default function BlogPost() {
           </li>
         </ul>
         
-        <div className="relative w-full h-60 my-8 rounded-lg overflow-hidden">
-          <Image 
-            src="/images/blog/new-home-layout-planning.jpg" 
-            alt="تخطيط توزيع الأثاث في المنزل الجديد" 
-            fill
-            className="object-cover"
-          />
-          <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm text-center">
-            تحديد مواقع الأثاث مسبقاً يسهل عملية النقل ويوفر الوقت والجهد يوم الانتقال
-          </p>
-        </div>
+        <Image
+          src="/images/blog/home-organization.jpg"
+          alt="تخطيط توزيع الأثاث في المنزل الجديد"
+          caption="تحديد مواقع الأثاث مسبقاً يسهل عملية النقل ويوفر الوقت والجهد يوم الانتقال"
+        />
         
         <h2>المرحلة الرابعة: قبل موعد الانتقال بأسبوعين</h2>
         
@@ -251,6 +242,12 @@ export default function BlogPost() {
           <p className="font-bold mb-1">استراتيجية فعالة:</p>
           <p>قم بتصوير محتويات كل صندوق قبل إغلاقه، ثم ألصق الصورة على الصندوق أو احتفظ بها في هاتفك مع رقم الصندوق. هذه الطريقة تساعدك على تحديد محتويات الصناديق بسرعة دون الحاجة لفتحها جميعاً فور الوصول.</p>
         </div>
+        
+        <Image
+          src="/images/blog/packing-secrets.jpg"
+          alt="تقنيات التغليف الاحترافية"
+          caption="استخدام تقنيات التغليف الصحيحة يضمن وصول ممتلكاتك بأمان"
+        />
         
         <h2>المرحلة الخامسة: قبل موعد الانتقال بأسبوع</h2>
         
@@ -335,6 +332,12 @@ export default function BlogPost() {
           <p>تأكد من فحص الأثاث عند تفريغه في المنزل الجديد وتوثيق أي تلف قد تلاحظه فوراً. معظم شركات النقل تطلب الإبلاغ عن التلفيات في نفس اليوم للنظر في التعويض.</p>
         </div>
         
+        <Image
+          src="/images/blog/loading-truck.jpg"
+          alt="تحميل الأثاث في الشاحنة"
+          caption="التنظيم الجيد أثناء تحميل الشاحنة يضمن نقل آمن وفعال"
+        />
+        
         <h2>المرحلة السابعة: الأيام الأولى بعد النقل</h2>
         
         <p className="mb-4">
@@ -371,17 +374,11 @@ export default function BlogPost() {
           </li>
         </ol>
         
-        <div className="relative w-full h-60 my-8 rounded-lg overflow-hidden">
-          <Image 
-            src="/images/blog/unpacking-organization.jpg" 
-            alt="تنظيم الأغراض بعد الانتقال" 
-            fill
-            className="object-cover"
-          />
-          <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 text-sm text-center">
-            فتح الصناديق بشكل منهجي وترتيب غرفة واحدة بالكامل قبل الانتقال للغرفة التالية
-          </p>
-        </div>
+        <Image
+          src="/images/blog/new-home-arrangement.jpg"
+          alt="تنظيم الأغراض بعد الانتقال"
+          caption="فتح الصناديق بشكل منهجي وترتيب غرفة واحدة بالكامل قبل الانتقال للغرفة التالية"
+        />
         
         <h2>قوالب جاهزة للتنظيم</h2>
         
