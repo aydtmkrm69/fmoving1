@@ -184,6 +184,7 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
           className="object-cover opacity-60"
           priority
           sizes="100vw"
+          unoptimized={true}
         />
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4">
@@ -200,6 +201,7 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
                     loading="lazy"
                     className="object-cover rounded-full"
                     sizes="48px"
+                    unoptimized={true}
                   />
                 </div>
                 <div>
@@ -236,13 +238,14 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
               <div className="bg-white rounded-lg shadow-md p-6 mb-8">
                 <div className="flex items-start space-x-6 space-x-reverse">
                   <div className="relative w-24 h-24 flex-shrink-0">
-                                      <Image
-                    src={authorImage}
-                    alt={post.author.name}
-                    fill
-                    loading="lazy"
-                    className="object-cover rounded-lg"
-                    sizes="96px"
+                    <Image
+                      src={authorImage}
+                      alt={post.author.name}
+                      fill
+                      loading="lazy"
+                      className="object-cover rounded-lg"
+                      sizes="96px"
+                      unoptimized={true}
                     />
                   </div>
                   <div>

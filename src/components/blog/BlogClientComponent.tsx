@@ -176,6 +176,7 @@ export default function BlogClientComponent({
                           fill
                           loading="lazy"
                           className="object-cover rounded"
+                          unoptimized={true}
                         />
                       </div>
                       <div>
@@ -211,6 +212,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
             fill
             loading="lazy"
             className="object-cover"
+            unoptimized={true}
           />
         </div>
         <div className="p-6">
@@ -222,6 +224,7 @@ function FeaturedPostCard({ post }: { post: BlogPost }) {
                 fill
                 loading="lazy"
                 className="object-cover rounded-full"
+                unoptimized={true}
               />
             </div>
             <div>
@@ -266,6 +269,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
             fill
             loading="lazy"
             className="object-cover"
+            unoptimized={true}
           />
         </div>
         <div className="p-6">
@@ -277,6 +281,7 @@ function BlogPostCard({ post }: { post: BlogPost }) {
                 fill
                 loading="lazy"
                 className="object-cover rounded-full"
+                unoptimized={true}
               />
             </div>
             <div>

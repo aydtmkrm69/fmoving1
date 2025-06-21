@@ -139,6 +139,7 @@ export default function BlogSidebar({ post }: BlogSidebarProps) {
                     alt={relatedPost.title}
                     fill
                     className="object-cover"
+                    unoptimized={true}
                   />
                 </div>
                 <div className="flex-1">
