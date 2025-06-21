@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import { 
   FaMapMarkerAlt, FaPhone, FaEnvelope, 
@@ -100,7 +100,7 @@ export default function ContactPage() {
       {/* Enhanced Hero Section */}
       <section className="relative h-[70vh] overflow-hidden">
         <div className="absolute inset-0 brightness-50">
-          <Image
+          <SafeImage
             src="/images/Furniture_moving_company.jpeg"
             alt="اتصل بنا"
             fill

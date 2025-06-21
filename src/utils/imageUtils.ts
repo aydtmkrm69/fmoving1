@@ -1,5 +1,5 @@
-// List of actual images available in the public/images/blog directory
-export const AVAILABLE_BLOG_IMAGES = [
+// Available images in public/images/blog/
+const AVAILABLE_BLOG_IMAGES = [
   'Furniture_Moving_Process.jpeg',
   'Furniture_Moving_in_Jeddah.jpeg',
   'Furniture_Moving_Services.jpeg',
@@ -31,6 +31,92 @@ export const AVAILABLE_BLOG_IMAGES = [
   'Ultimate_Checklist_Before_Moving_Day.jpeg',
   'Professional_Furniture_Packing.jpeg'
 ];
+
+// Image mapping for non-existent images to available ones
+const IMAGE_FALLBACK_MAP: Record<string, string> = {
+  // Insurance related
+  'furniture-insurance-moving.jpg': 'Furniture_Insurance_During_Moving.jpeg',
+  'insurance-types-comparison.jpg': 'Services_in_Furniture_Moving_Worth_the_Cost.jpeg',
+  'choosing-right-insurance.jpg': 'Best_Furniture_Moving_Company.jpeg',
+  'damage-claim-process.jpg': 'Furniture_Moving_Process.jpeg',
+  'intercity-moving-insurance.jpg': 'Furniture_Moving_Services.jpeg',
+  'insurance-legal-framework.jpg': 'Questions_You_Must_Ask_a_Moving_Company.jpeg',
+  'customers-insurance-experiences.jpg': 'My_Experience_with_X_Moving_Company.jpeg',
+  'insurance-checklist.jpg': 'Ultimate_Checklist_Before_Moving_Day.jpeg',
+
+  // Furniture assembly
+  'safely-disassemble-assemble-furniture.jpg': 'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
+  'furniture-tools.jpg': 'Professional_Furniture_Packing.jpeg',
+  'furniture-preparation.jpg': 'Furniture_Moving_Process.jpeg',
+  'parts-documentation.jpg': 'Guide_to Successful_Furniture_Moving.jpeg',
+  'bed-assembly.jpg': 'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
+  'complex-furniture-disassembly.jpg': 'Handle_Bulky_and_Heavy_Furniture_During_a_Move.jpeg',
+  'furniture-troubleshooting.jpg': 'Questions_You_Must_Ask_a_Moving_Company.jpeg',
+  'ikea-furniture-assembly.jpg': 'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
+  'professional-furniture-assembly.jpg': 'Professional_Furniture_Packing.jpeg',
+
+  // Unwanted items
+  'unwanted-items-solutions.jpg': 'What_to_Do_with_Your_Unwanted_Items_Before_Moving_Furniture.jpeg',
+  'sorting-system.jpg': 'Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
+  'donation-centers.jpg': 'Services_in_Furniture_Moving_Worth_the_Cost.jpeg',
+  'recycling-centers.jpg': 'Secure_Furniture_Storage_Services_in_Saudi_Arabia.jpeg',
+  'sentimental-items-management.jpg': 'Moving_Art_Pieces_and_Valuables.jpeg',
+  'decluttering-schedule.jpg': 'Ultimate_Checklist_Before_Moving_Day.jpeg',
+  'professional-organizers.jpg': 'Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
+
+  // Moving day checklist
+  'moving-day-checklist.jpg': 'Ultimate_Checklist_Before_Moving_Day.jpeg',
+  'packing-process-checklist.jpg': 'Professional_Furniture_Packing.jpeg',
+
+  // Technology
+  'technology-furniture-moving.jpg': 'Does_Technology_Contribute_to_Improving_the_Furniture_Moving_Experience.jpeg',
+
+  // General mapping for common missing images
+  'furniture-wrapping-heat-protection.jpg': 'Moving_Furniture_in_Hot_Weather.jpeg',
+  'office-company-furniture-moving-saudi-arabia.jpeg': 'Furniture_Moving_in_KSA.jpeg',
+  'moving-budget-planning.jpg': 'Furniture_Moving_Prices_in_Saudi_Arabia.jpeg',
+  'new-home-layout-planning.jpg': 'Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
+  'complete-timeline-furniture-moving.jpg': 'Furniture_Moving_Process.jpeg',
+  'unpacking-organization.jpg': 'Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
+  'moving-furniture-dammam.jpg': 'Everything_You_Need_to_Know_About_Moving_Furniture_in_Dammam.jpeg',
+  'dammam-neighborhoods-map.jpg': 'Best_Neighborhoods_in_Riyadh_for_New_Housing.jpeg',
+  'humidity-protection-dammam.jpg': 'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
+  'moving-services-saudi-cities.jpg': 'Furniture_Moving_Services.jpeg',
+  'furniture-moving-tips.jpg': 'Golden_Tips_for_a_Stress-Free.jpeg'
+};
+
+// Function to get the correct image path
+export function getImagePath(imagePath: string): string {
+  // If it's already a full path starting with /images/blog/
+  if (imagePath.startsWith('/images/blog/')) {
+    const filename = imagePath.replace('/images/blog/', '');
+    
+    // Check if the image exists in our available images
+    if (AVAILABLE_BLOG_IMAGES.includes(filename)) {
+      return imagePath;
+    }
+    
+    // Check if we have a fallback mapping
+    if (IMAGE_FALLBACK_MAP[filename]) {
+      return '/images/blog/' + IMAGE_FALLBACK_MAP[filename];
+    }
+    
+    // Default fallback
+    return '/images/blog/Furniture_Moving_Process.jpeg';
+  }
+  
+  // If it's not a blog image path, return as is
+  return imagePath;
+}
+
+// Function to validate if an image exists
+export function isImageAvailable(imagePath: string): boolean {
+  if (imagePath.startsWith('/images/blog/')) {
+    const filename = imagePath.replace('/images/blog/', '');
+    return AVAILABLE_BLOG_IMAGES.includes(filename);
+  }
+  return true; // Assume non-blog images are available
+}
 
 // قائمة صور المؤلفين المتوفرة فعلياً في المجلد
 export const AVAILABLE_AUTHOR_IMAGES = [

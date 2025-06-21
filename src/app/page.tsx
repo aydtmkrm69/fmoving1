@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import SafeImage from '@/components/SafeImage';
 import Link from 'next/link';
 import { 
   FaTruck, FaBox, FaWarehouse, FaGlobe, FaShippingFast, 
@@ -76,7 +76,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative h-[85vh] overflow-hidden">
         <div className="absolute inset-0 brightness-40">
-          <Image
+          <SafeImage
             src="/images/blog/Furniture_Moving_Process.jpeg"
             alt="خدمات نقل العفش"
             fill
@@ -191,7 +191,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {saudiCities.map((city, index) => (
               <div key={index} className="relative rounded-lg overflow-hidden h-64 hover-lift">
-                <Image
+                <SafeImage
                   src={city.img}
                   alt={`نقل عفش في ${city.name}`}
                   fill
@@ -199,10 +199,7 @@ export default function HomePage() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <FaMapMarkerAlt className="w-8 h-8 mx-auto mb-3" />
-                    <h3 className="text-2xl font-bold">{city.name}</h3>
-                  </div>
+                  <h3 className="text-white text-xl font-bold text-center">{city.name}</h3>
                 </div>
               </div>
             ))}
@@ -233,7 +230,7 @@ export default function HomePage() {
                 
                 <div className="flex items-center">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
+                    <SafeImage
                       src={testimonial.image}
                       alt={testimonial.name}
                       fill
@@ -285,7 +282,7 @@ export default function HomePage() {
               <LazyLoad key={post.slug} placeholder={<BlogPostSkeleton />}>
                 <div className="blog-card bg-white rounded-lg shadow-md overflow-hidden hover-lift h-full flex flex-col">
                   <div className="relative h-48">
-                    <Image
+                    <SafeImage
                       src={post.image}
                       alt={post.title}
                       fill
