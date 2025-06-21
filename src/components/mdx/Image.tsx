@@ -143,21 +143,21 @@ export default function BlogImage({
     // استخدم صورة افتراضية مناسبة
     imageSrc = '/images/blog/Furniture_Moving_Process.jpeg';
   }
-  
+
   return (
     <figure className="my-8">
       <div className={`relative overflow-hidden rounded-lg ${className}`}>
         <Image
-          src={imageSrc}
-          alt={alt}
+            src={imageSrc}
+            alt={alt}
           width={width}
           height={height}
           className="object-cover w-full h-full"
           priority={priority}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
           unoptimized={true}
-        />
-      </div>
+          />
+        </div>
       {caption && (
         <figcaption className="mt-3 text-center text-sm text-gray-500 italic">
           {caption}

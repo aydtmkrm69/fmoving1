@@ -1,15 +1,26 @@
+import type { Metadata } from 'next';
 import ArticleTemplate from '@/components/mdx/ArticleTemplate';
 import Heading from '@/components/mdx/Heading';
 import Image from '@/components/mdx/Image';
 import Callout from '@/components/mdx/Callout';
 import { UnorderedList, OrderedList, ListItem } from '@/components/mdx/List';
 
+export const metadata: Metadata = {
+  title: 'نقل العفش في الطقس الحار: استعدادات ضرورية لحماية أثاثك في السعودية - مدونة نقل العفش',
+  description: 'دليل شامل حول كيفية نقل الأثاث في درجات الحرارة المرتفعة في المملكة العربية السعودية، مع نصائح عملية لحماية الأثاث والأجهزة الإلكترونية والمقتنيات الثمينة من التلف الناتج عن الحرارة الشديدة',
+  openGraph: {
+    title: 'نقل العفش في الطقس الحار: استعدادات ضرورية لحماية أثاثك في السعودية',
+    description: 'نصائح وإرشادات عملية لنقل العفش في أجواء المملكة الحارة مع استراتيجيات لحماية مختلف أنواع الأثاث والمقتنيات الشخصية من الأضرار الناتجة عن ارتفاع درجات الحرارة.',
+    images: ['/images/blog/moving-furniture-hot-weather.jpg'],
+  },
+};
+
 const post = {
   id: 'moving-furniture-hot-weather-saudi-arabia',
   title: "نقل العفش في الطقس الحار: استعدادات ضرورية لحماية أثاثك في السعودية",
   description: "دليل شامل حول كيفية نقل الأثاث في درجات الحرارة المرتفعة في المملكة العربية السعودية، مع نصائح عملية لحماية الأثاث والأجهزة الإلكترونية والمقتنيات الثمينة من التلف الناتج عن الحرارة الشديدة",
-  publishedAt: "2024-04-10",
   content: "نصائح وإرشادات عملية لنقل العفش في أجواء المملكة الحارة مع استراتيجيات لحماية مختلف أنواع الأثاث والمقتنيات الشخصية من الأضرار الناتجة عن ارتفاع درجات الحرارة.",
+  publishedAt: "2024-04-10",
   readingTime: "12 دقيقة للقراءة",
   author: {
     id: "mohammed-alotaibi",
@@ -102,6 +113,12 @@ export default function BlogPost() {
         <ListItem>استخدام أغطية عاكسة فوق الطبقة العليا من الأثاث</ListItem>
         <ListItem>تجنب ترك الشاحنة متوقفة في الشمس لفترات طويلة</ListItem>
       </OrderedList>
+      
+      <Image
+        src="/images/blog/moving-truck-hot-weather.jpg"
+        alt="تحميل الأثاث في الطقس الحار"
+        caption="ترتيب الأثاث في الشاحنة يجب أن يراعي تدوير الهواء وتجنب تراكم الحرارة"
+      />
       
       <Heading as="h2">إجراءات وقائية عند الوصول</Heading>
       
