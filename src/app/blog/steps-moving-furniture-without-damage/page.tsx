@@ -96,6 +96,12 @@ export default function BlogPost() {
         احتفظ بـ <strong>"ملف النقل"</strong> يحتوي على صور الأثاث، تعليمات التركيب، وأرقام الطوارئ. هذا سيوفر عليك ساعات من البحث يوم النقل.
       </Callout>
 
+      <Image
+        src="/images/blog/moving-checklist.jpg"
+        alt="قائمة التحضير للنقل"
+        caption="أهمية التخطيط المسبق والتحضير الجيد لعملية النقل"
+      />
+
       <Heading as="h2">المرحلة الثانية: تجهيز الأدوات ومواد التغليف</Heading>
 
       <p className="mb-4">
@@ -164,6 +170,12 @@ export default function BlogPost() {
       <Callout type="warning" title="تحذير مهم">
         لا تستخدم الجرائد في تغليف الأثاث الفاتح اللون أو الأبيض، فالحبر قد ينتقل ويسبب بقعاً دائمة. استخدم ورق التغليف الأبيض الخالي من الحبر.
       </Callout>
+
+      <Image
+        src="/images/blog/furniture-insurance.jpg"
+        alt="تأمين الأثاث أثناء النقل"
+        caption="أهمية الحصول على تأمين شامل لحماية أثاثك من أي أضرار محتملة"
+      />
 
       <Heading as="h2">المرحلة الرابعة: فك وتحضير الأثاث للنقل</Heading>
 
@@ -239,6 +251,12 @@ export default function BlogPost() {
       <Callout type="warning" title="تحذير السلامة">
         لا تحاول نقل أي قطعة يزيد وزنها عن <strong>30 كيلوغرام</strong> بمفردك. القطع الثقيلة تتطلب دائماً فريق عمل أو معدات متخصصة لتجنب الإصابات وأضرار الأثاث.
       </Callout>
+
+      <Image
+        src="/images/blog/heavy-furniture.jpg"
+        alt="نقل الأثاث الثقيل بأمان"
+        caption="تقنيات متخصصة لنقل الأثاث الثقيل والضخم باستخدام المعدات المناسبة"
+      />
 
       <Heading as="h2">المرحلة السادسة: ترتيب الشاحنة وتأمين الحمولة</Heading>
 
@@ -352,6 +370,12 @@ export default function BlogPost() {
         <ListItem><strong>المجوهرات والساعات:</strong> خزائن صغيرة مبطنة</ListItem>
       </UnorderedList>
 
+      <Image
+        src="/images/blog/valuables-moving.jpg"
+        alt="نقل القطع الثمينة والتحف"
+        caption="تقنيات خاصة لحماية القطع الثمينة والتحف والأعمال الفنية أثناء النقل"
+      />
+
       <Heading as="h3">الحماية من العوامل الجوية</Heading>
       <UnorderedList>
         <ListItem><strong>الرطوبة:</strong> أكياس السيليكا جل للامتصاص</ListItem>
@@ -374,6 +398,12 @@ export default function BlogPost() {
         <ListItem><strong>إهمال التأمين:</strong> اقتصاد خاطئ قد يكلف آلاف الريالات</ListItem>
         <ListItem><strong>عدم تصوير الأضرار:</strong> فوراً عند اكتشافها</ListItem>
       </UnorderedList>
+
+      <Image
+        src="/images/blog/moving-mistakes.jpg"
+        alt="أخطاء شائعة في نقل الأثاث"
+        caption="تجنب هذه الأخطاء الشائعة التي قد تؤدي إلى أضرار باهظة في أثاثك"
+      />
 
       <Heading as="h2">قائمة المراجعة النهائية</Heading>
 
