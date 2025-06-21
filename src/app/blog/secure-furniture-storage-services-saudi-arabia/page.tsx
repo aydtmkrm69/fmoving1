@@ -48,35 +48,47 @@ const post = {
 
 export default function BlogPost() {
   const content = (
-    <>
-      <Heading as="h1">خدمات تخزين العفش الآمن في السعودية: دليلك الشامل</Heading>
+    <div suppressHydrationWarning>
+      <h1 className="text-4xl font-bold mb-6">خدمات تخزين العفش الآمن في السعودية: دليلك الشامل</h1>
       
       <p className="mb-6">
         في بعض الأحيان، قد تحتاج إلى تخزين أثاثك لفترة من الزمن. سواء كنت تنتقل إلى منزل جديد، تسافر لفترة طويلة، أو تجدد منزلك، فإن معرفة خيارات التخزين الآمن وكيفية اختيار الخدمة المناسبة أمر ضروري.
       </p>
       
-      <Heading as="h2">متى تحتاج إلى خدمات تخزين العفش؟</Heading>
+      <h2 className="text-3xl font-bold mb-5">متى تحتاج إلى خدمات تخزين العفش؟</h2>
       
-      <UnorderedList>
-        <ListItem>أثناء تجديد المنزل أو إعادة تصميمه</ListItem>
-        <ListItem>عند السفر لفترة طويلة خارج المملكة</ListItem>
-        <ListItem>في حالة الانتقال المؤقت لمسكن أصغر</ListItem>
-        <ListItem>عند الحاجة لتخزين أثاث إضافي لا تحتاجه حالياً</ListItem>
-      </UnorderedList>
+      <ul className="list-disc list-outside mr-6 mb-6 space-y-2">
+        <li>أثناء تجديد المنزل أو إعادة تصميمه</li>
+        <li>عند السفر لفترة طويلة خارج المملكة</li>
+        <li>في حالة الانتقال المؤقت لمسكن أصغر</li>
+        <li>عند الحاجة لتخزين أثاث إضافي لا تحتاجه حالياً</li>
+      </ul>
       
-      <Callout type="info" title="نصيحة مفيدة">
-        احرص على تحديد مدة التخزين المتوقعة مسبقاً لاختيار الخطة الأنسب لميزانيتك واحتياجاتك.
-      </Callout>
+      <div className="p-4 my-6 border rounded-lg bg-blue-50 border-blue-200">
+        <div className="flex items-start">
+          <div className="text-blue-600 mt-1 ml-3">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2 text-blue-800">نصيحة مفيدة</h4>
+            <div className="text-gray-700">
+              احرص على تحديد مدة التخزين المتوقعة مسبقاً لاختيار الخطة الأنسب لميزانيتك واحتياجاتك.
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <Heading as="h2">معايير اختيار مستودع تخزين العفش</Heading>
+      <h2 className="text-3xl font-bold mb-5">معايير اختيار مستودع تخزين العفش</h2>
       
-      <OrderedList>
-        <ListItem>نظام أمني متكامل (كاميرات مراقبة، حراسة 24/7)</ListItem>
-        <ListItem>نظام تحكم في درجة الحرارة والرطوبة</ListItem>
-        <ListItem>نظام مكافحة الحرائق والحشرات</ListItem>
-        <ListItem>سهولة الوصول والموقع المناسب</ListItem>
-        <ListItem>نظافة المستودع وتنظيمه</ListItem>
-      </OrderedList>
+      <ol className="list-decimal list-outside mr-6 mb-6 space-y-2">
+        <li>نظام أمني متكامل (كاميرات مراقبة، حراسة 24/7)</li>
+        <li>نظام تحكم في درجة الحرارة والرطوبة</li>
+        <li>نظام مكافحة الحرائق والحشرات</li>
+        <li>سهولة الوصول والموقع المناسب</li>
+        <li>نظافة المستودع وتنظيمه</li>
+      </ol>
       
       <Image
         src="/images/blog/storage-facility-security.jpg"
@@ -84,41 +96,65 @@ export default function BlogPost() {
         caption="أنظمة أمان متطورة تضمن حماية أثاثك في مستودعات التخزين الاحترافية"
       />
       
-      <Heading as="h2">خطوات تجهيز العفش للتخزين</Heading>
+      <h2 className="text-3xl font-bold mb-5">خطوات تجهيز العفش للتخزين</h2>
       
-      <OrderedList>
-        <ListItem>تنظيف جميع قطع الأثاث جيداً</ListItem>
-        <ListItem>فك القطع الكبيرة إذا أمكن لتوفير المساحة</ListItem>
-        <ListItem>تغليف كل قطعة بشكل مناسب</ListItem>
-        <ListItem>وضع علامات واضحة على كل قطعة</ListItem>
-        <ListItem>عمل قائمة جرد مفصلة</ListItem>
-      </OrderedList>
+      <ol className="list-decimal list-outside mr-6 mb-6 space-y-2">
+        <li>تنظيف جميع قطع الأثاث جيداً</li>
+        <li>فك القطع الكبيرة إذا أمكن لتوفير المساحة</li>
+        <li>تغليف كل قطعة بشكل مناسب</li>
+        <li>وضع علامات واضحة على كل قطعة</li>
+        <li>عمل قائمة جرد مفصلة</li>
+      </ol>
       
-      <Callout type="warning" title="تنبيه مهم">
-        تجنب تخزين المواد القابلة للتلف أو الخطرة في المستودع، واحرص على إخبار الشركة بأي مواد حساسة تحتاج لعناية خاصة.
-      </Callout>
+      <div className="p-4 my-6 border rounded-lg bg-yellow-50 border-yellow-200">
+        <div className="flex items-start">
+          <div className="text-yellow-600 mt-1 ml-3">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2 text-yellow-800">تنبيه مهم</h4>
+            <div className="text-gray-700">
+              تجنب تخزين المواد القابلة للتلف أو الخطرة في المستودع، واحرص على إخبار الشركة بأي مواد حساسة تحتاج لعناية خاصة.
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <Heading as="h2">أنواع التغليف المناسبة للتخزين طويل المدى</Heading>
+      <h2 className="text-3xl font-bold mb-5">أنواع التغليف المناسبة للتخزين طويل المدى</h2>
       
-      <UnorderedList>
-        <ListItem>الأغطية البلاستيكية المقاومة للغبار للأثاث المنجد</ListItem>
-        <ListItem>صناديق كرتونية متينة للقطع الصغيرة</ListItem>
-        <ListItem>فقاعات التغليف للقطع القابلة للكسر</ListItem>
-        <ListItem>أغطية قماشية خاصة للأثاث الخشبي</ListItem>
-      </UnorderedList>
+      <ul className="list-disc list-outside mr-6 mb-6 space-y-2">
+        <li>الأغطية البلاستيكية المقاومة للغبار للأثاث المنجد</li>
+        <li>صناديق كرتونية متينة للقطع الصغيرة</li>
+        <li>فقاعات التغليف للقطع القابلة للكسر</li>
+        <li>أغطية قماشية خاصة للأثاث الخشبي</li>
+      </ul>
       
-      <Heading as="h2">تكاليف تخزين العفش في السعودية</Heading>
+      <h2 className="text-3xl font-bold mb-5">تكاليف تخزين العفش في السعودية</h2>
       
-      <UnorderedList>
-        <ListItem>التخزين اليومي: من 20 إلى 50 ريال حسب الحجم</ListItem>
-        <ListItem>التخزين الشهري: من 300 إلى 1000 ريال</ListItem>
-        <ListItem>خدمات إضافية (النقل، التغليف، التأمين)</ListItem>
-        <ListItem>عروض خاصة للتخزين طويل المدى</ListItem>
-      </UnorderedList>
+      <ul className="list-disc list-outside mr-6 mb-6 space-y-2">
+        <li>التخزين اليومي: من 20 إلى 50 ريال حسب الحجم</li>
+        <li>التخزين الشهري: من 300 إلى 1000 ريال</li>
+        <li>خدمات إضافية (النقل، التغليف، التأمين)</li>
+        <li>عروض خاصة للتخزين طويل المدى</li>
+      </ul>
       
-      <Callout type="success" title="معلومة مهمة">
-        تأكد من وجود تأمين شامل على العفش أثناء فترة التخزين، واحتفظ بنسخة من عقد التخزين وقائمة الجرد.
-      </Callout>
+      <div className="p-4 my-6 border rounded-lg bg-green-50 border-green-200">
+        <div className="flex items-start">
+          <div className="text-green-600 mt-1 ml-3">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2 text-green-800">معلومة مهمة</h4>
+            <div className="text-gray-700">
+              تأكد من وجود تأمين شامل على العفش أثناء فترة التخزين، واحتفظ بنسخة من عقد التخزين وقائمة الجرد.
+            </div>
+          </div>
+        </div>
+      </div>
       
       <Image
         src="/images/blog/furniture-storage-warehouse.jpg"
@@ -126,30 +162,30 @@ export default function BlogPost() {
         caption="مستودعات التخزين الحديثة توفر بيئة مثالية للحفاظ على الأثاث لفترات طويلة"
       />
       
-      <Heading as="h2">نصائح للحفاظ على العفش أثناء التخزين</Heading>
+      <h2 className="text-3xl font-bold mb-5">نصائح للحفاظ على العفش أثناء التخزين</h2>
       
-      <UnorderedList>
-        <ListItem>تفقد العفش بشكل دوري إذا أمكن</ListItem>
-        <ListItem>تجنب تكديس القطع فوق بعضها</ListItem>
-        <ListItem>استخدام حوامل وأرفف مناسبة</ListItem>
-        <ListItem>ترك مسافات للتهوية بين القطع</ListItem>
-      </UnorderedList>
+      <ul className="list-disc list-outside mr-6 mb-6 space-y-2">
+        <li>تفقد العفش بشكل دوري إذا أمكن</li>
+        <li>تجنب تكديس القطع فوق بعضها</li>
+        <li>استخدام حوامل وأرفف مناسبة</li>
+        <li>ترك مسافات للتهوية بين القطع</li>
+      </ul>
       
-      <Heading as="h2">الأسئلة الشائعة حول تخزين العفش</Heading>
+      <h2 className="text-3xl font-bold mb-5">الأسئلة الشائعة حول تخزين العفش</h2>
       
-      <UnorderedList>
-        <ListItem>هل يمكنني الوصول إلى عفشي متى أردت؟</ListItem>
-        <ListItem>ما هي سياسة التأمين المتبعة؟</ListItem>
-        <ListItem>كيف يتم حساب تكلفة التخزين؟</ListItem>
-        <ListItem>هل هناك مواد ممنوع تخزينها؟</ListItem>
-      </UnorderedList>
+      <ul className="list-disc list-outside mr-6 mb-6 space-y-2">
+        <li>هل يمكنني الوصول إلى عفشي متى أردت؟</li>
+        <li>ما هي سياسة التأمين المتبعة؟</li>
+        <li>كيف يتم حساب تكلفة التخزين؟</li>
+        <li>هل هناك مواد ممنوع تخزينها؟</li>
+      </ul>
       
-      <Heading as="h2">الخاتمة</Heading>
+      <h2 className="text-3xl font-bold mb-5">الخاتمة</h2>
       
       <p className="mb-6">
         اختيار خدمة تخزين العفش المناسبة يتطلب دراسة متأنية للخيارات المتاحة ومقارنة الأسعار والخدمات. تأكد من اختيار شركة موثوقة تقدم مستودعات آمنة ومجهزة بكافة وسائل الحماية. واحرص على تجهيز عفشك بشكل صحيح للتخزين لضمان المحافظة عليه في حالة ممتازة طوال فترة التخزين.
       </p>
-    </>
+    </div>
   );
 
   return <ArticleTemplate post={post} content={content} />;
