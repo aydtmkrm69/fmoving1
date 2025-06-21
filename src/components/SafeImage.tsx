@@ -32,20 +32,38 @@ export default function SafeImage({
   const [imageSrc, setImageSrc] = useState<string>('');
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
     // Get the validated image path
     const validSrc = getImagePath(src);
     setImageSrc(validSrc);
     setIsLoading(false);
+    setHasError(false);
+    setRetryCount(0);
   }, [src]);
 
   const handleError = () => {
-    if (!hasError) {
+    if (!hasError && retryCount < 2) {
       setHasError(true);
-      // Fallback to the default image
-      setImageSrc('/images/blog/Furniture_Moving_Process.jpeg');
+      setRetryCount(prev => prev + 1);
+      
+      // Try different fallback images based on retry count
+      if (retryCount === 0) {
+        // First retry: try with corrected path
+        const correctedSrc = src.replace('Guide_to Successful_Furniture_Moving.jpeg', 'Guide_to_Successful_Furniture_Moving.jpeg');
+        const validSrc = getImagePath(correctedSrc);
+        setImageSrc(validSrc);
+      } else {
+        // Final fallback: use default image
+        setImageSrc('/images/blog/Furniture_Moving_Process.jpeg');
+      }
     }
+  };
+
+  const handleLoad = () => {
+    setIsLoading(false);
+    setHasError(false);
   };
 
   if (isLoading || !imageSrc) {
@@ -64,8 +82,9 @@ export default function SafeImage({
   const imageProps = {
     src: imageSrc,
     alt,
-    className: `object-cover ${className}`,
+    className: `object-cover transition-opacity duration-300 ${hasError ? 'opacity-80' : 'opacity-100'} ${className}`,
     onError: handleError,
+    onLoad: handleLoad,
     priority,
     sizes,
     loading: priority ? 'eager' : loading,

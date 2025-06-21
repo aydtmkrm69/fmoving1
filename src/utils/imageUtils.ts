@@ -7,7 +7,7 @@ const AVAILABLE_BLOG_IMAGES = [
   'Secure_Furniture_Storage_Services_in_Saudi_Arabia.jpeg',
   'Your_Guide_to_Efficiently_Arranging_Your_New_Home.jpeg',
   'Moving_Art_Pieces_and_Valuables.jpeg',
-  'Guide_to Successful_Furniture_Moving.jpeg',
+  'Guide_to_Successful_Furniture_Moving.jpeg', // Fixed: removed space
   'Does_Technology_Contribute_to_Improving_the_Furniture_Moving_Experience.jpeg',
   'Furniture_Insurance_During_Moving.jpeg',
   'Questions_You_Must_Ask_a_Moving_Company.jpeg',
@@ -29,11 +29,35 @@ const AVAILABLE_BLOG_IMAGES = [
   'Guide_to_Moving_Furniture_in_Riyadh.jpeg',
   'Handle_Bulky_and_Heavy_Furniture_During_a_Move.jpeg',
   'Ultimate_Checklist_Before_Moving_Day.jpeg',
-  'Professional_Furniture_Packing.jpeg'
+  'Professional_Furniture_Packing.jpeg',
+  'Furniture_moving_company.jpeg', // Added from root images folder
+  // Newly created images
+  'moving-day-checklist.jpg',
+  'furniture-insurance-moving.jpg',
+  'safely-disassemble-assemble-furniture.jpg',
+  'unwanted-items-solutions.jpg',
+  'technology-furniture-moving.jpg',
+  'stress-free-moving-tips.jpg'
+];
+
+// Available images in public/images/ (root)
+const AVAILABLE_ROOT_IMAGES = [
+  'Dyna_furniture_moving.jpeg',
+  'Furniture_moving_Riyadh.jpeg',
+  'Furniture_moving_company.jpeg',
+  'Best_Neighborhoods_in_Riyadh_for_New_Housing.jpeg',
+  'Furniture_moving_prices.jpeg',
+  'Services_in_Furniture_Moving_Worth_the_Cost.jpeg',
+  'Furniture_Moving_Prices_in_Saudi_Arabia.jpeg',
+  'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
+  'Furniture_moving.jpeg'
 ];
 
 // Image mapping for non-existent images to available ones
 const IMAGE_FALLBACK_MAP: Record<string, string> = {
+  // Fix the space issue
+  'Guide_to Successful_Furniture_Moving.jpeg': 'Guide_to_Successful_Furniture_Moving.jpeg',
+  
   // Insurance related
   'furniture-insurance-moving.jpg': 'Furniture_Insurance_During_Moving.jpeg',
   'insurance-types-comparison.jpg': 'Services_in_Furniture_Moving_Worth_the_Cost.jpeg',
@@ -48,7 +72,7 @@ const IMAGE_FALLBACK_MAP: Record<string, string> = {
   'safely-disassemble-assemble-furniture.jpg': 'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
   'furniture-tools.jpg': 'Professional_Furniture_Packing.jpeg',
   'furniture-preparation.jpg': 'Furniture_Moving_Process.jpeg',
-  'parts-documentation.jpg': 'Guide_to Successful_Furniture_Moving.jpeg',
+  'parts-documentation.jpg': 'Guide_to_Successful_Furniture_Moving.jpeg',
   'bed-assembly.jpg': 'Safely_Disassemble_and Assemble_Complex_Furniture.jpeg',
   'complex-furniture-disassembly.jpg': 'Handle_Bulky_and_Heavy_Furniture_During_a_Move.jpeg',
   'furniture-troubleshooting.jpg': 'Questions_You_Must_Ask_a_Moving_Company.jpeg',
@@ -87,7 +111,25 @@ const IMAGE_FALLBACK_MAP: Record<string, string> = {
 
 // Function to get the correct image path
 export function getImagePath(imagePath: string): string {
-  // If it's already a full path starting with /images/blog/
+  // Handle root images folder
+  if (imagePath.startsWith('/images/') && !imagePath.startsWith('/images/blog/')) {
+    const filename = imagePath.replace('/images/', '');
+    
+    // Check if image exists in root folder
+    if (AVAILABLE_ROOT_IMAGES.includes(filename)) {
+      return imagePath;
+    }
+    
+    // If it exists in blog folder, redirect there
+    if (AVAILABLE_BLOG_IMAGES.includes(filename)) {
+      return '/images/blog/' + filename;
+    }
+    
+    // Default fallback
+    return '/images/blog/Furniture_Moving_Process.jpeg';
+  }
+  
+  // Handle blog images
   if (imagePath.startsWith('/images/blog/')) {
     const filename = imagePath.replace('/images/blog/', '');
     
@@ -105,7 +147,7 @@ export function getImagePath(imagePath: string): string {
     return '/images/blog/Furniture_Moving_Process.jpeg';
   }
   
-  // If it's not a blog image path, return as is
+  // If it's not an images path, return as is
   return imagePath;
 }
 
@@ -115,7 +157,13 @@ export function isImageAvailable(imagePath: string): boolean {
     const filename = imagePath.replace('/images/blog/', '');
     return AVAILABLE_BLOG_IMAGES.includes(filename);
   }
-  return true; // Assume non-blog images are available
+  
+  if (imagePath.startsWith('/images/')) {
+    const filename = imagePath.replace('/images/', '');
+    return AVAILABLE_ROOT_IMAGES.includes(filename);
+  }
+  
+  return true; // Assume other images are available
 }
 
 // قائمة صور المؤلفين المتوفرة فعلياً في المجلد

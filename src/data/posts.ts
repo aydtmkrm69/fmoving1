@@ -8,7 +8,7 @@ export const posts: BlogPost[] = [
     slug: 'comprehensive-guide-furniture-moving-saudi-arabia-2025',
     description: 'دليل شامل يقدم خطوات ونصائح الخبراء لنقل العفش بنجاح في السعودية، مع التركيز على أحدث الممارسات في 2025',
     content: '',
-    image: '/images/blog/Guide_to Successful_Furniture_Moving.jpeg',
+    image: '/images/blog/Guide_to_Successful_Furniture_Moving.jpeg', // Fixed: removed space
     author: authors[0],
     publishedAt: '2024-04-10',
     tags: ['نقل عفش', 'السعودية', 'دليل شامل', '2025'],
