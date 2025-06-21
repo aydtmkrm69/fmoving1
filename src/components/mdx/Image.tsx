@@ -1,6 +1,5 @@
-'use client';
 
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 interface ImageProps {
   src: string;
@@ -147,7 +146,7 @@ export default function BlogImage({
   return (
     <figure className="my-8">
       <div className={`relative overflow-hidden rounded-lg ${className}`}>
-        <Image
+        <NextImage
             src={imageSrc}
             alt={alt}
           width={width}

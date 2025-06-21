@@ -1,4 +1,3 @@
-'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +8,6 @@ import { resolveImagePath } from '@/utils/imageUtils';
 import { formatDateArabic, formatDateISO } from '@/utils/dateUtils';
 import Script from 'next/script';
 import { SITE_URL, generateArticleSchema, generateBreadcrumbSchema } from '@/utils/seo';
-import React from 'react';
 
 type ArticleTemplateProps = {
   post: BlogPost;
@@ -162,7 +160,7 @@ export default function ArticleTemplate({ post, content }: ArticleTemplateProps)
               </div>
             </div>
 
-            {/* Article Content */}
+            {/* Article Content - Direct render without any processing */}
             <div className="bg-white rounded-lg shadow-md p-8">
               <div className="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-lg prose-img:my-8 text-gray-800">
                 {content}

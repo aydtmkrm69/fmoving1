@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from '@/components/mdx/Image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -17,14 +17,11 @@ export default function BlogPost() {
     <article className="max-w-3xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4 text-center">أفضل أحياء الرياض للسكن الجديد: وكيفية نقل عفشك إليها بسهولة</h1>
       
-      <div className="relative w-full h-80 my-8 rounded-lg overflow-hidden">
-        <Image 
-          src="/images/blog/riyadh-neighborhoods-moving.jpg" 
-          alt="أفضل أحياء الرياض للسكن الجديد" 
-          fill
-          className="object-cover"
-        />
-      </div>
+      <Image 
+        src="best-riyadh-neighborhoods" 
+        alt="أفضل أحياء الرياض للسكن الجديد" 
+        caption="دليل شامل لأفضل أحياء الرياض للسكن ونقل الأثاث"
+      />
 
       <div className="prose prose-lg max-w-none leading-relaxed text-right">
         <p className="font-bold text-xl mb-6">
