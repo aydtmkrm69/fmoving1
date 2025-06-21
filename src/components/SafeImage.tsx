@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { getImagePath } from '@/utils/imageUtils';
 
 interface SafeImageProps {
   src: string;
@@ -29,77 +28,54 @@ export default function SafeImage({
   loading = 'lazy',
   caption
 }: SafeImageProps) {
-  const [imageSrc, setImageSrc] = useState<string>('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [imageSrc, setImageSrc] = useState<string>(src);
   const [hasError, setHasError] = useState(false);
-  const [retryCount, setRetryCount] = useState(0);
 
-  useEffect(() => {
-    // Get the validated image path
-    const validSrc = getImagePath(src);
-    setImageSrc(validSrc);
-    setIsLoading(false);
-    setHasError(false);
-    setRetryCount(0);
-  }, [src]);
+  // Function to get fallback image
+  const getFallbackImage = () => {
+    return '/images/blog/Furniture_Moving_Process.jpeg';
+  };
 
+  // Handle image error
   const handleError = () => {
-    if (!hasError && retryCount < 2) {
+    console.log('Image failed to load:', imageSrc);
+    if (!hasError) {
       setHasError(true);
-      setRetryCount(prev => prev + 1);
-      
-      // Try different fallback images based on retry count
-      if (retryCount === 0) {
-        // First retry: try with corrected path
-        const correctedSrc = src.replace('Guide_to Successful_Furniture_Moving.jpeg', 'Guide_to_Successful_Furniture_Moving.jpeg');
-        const validSrc = getImagePath(correctedSrc);
-        setImageSrc(validSrc);
-      } else {
-        // Final fallback: use default image
-        setImageSrc('/images/blog/Furniture_Moving_Process.jpeg');
-      }
+      const fallback = getFallbackImage();
+      console.log('Using fallback:', fallback);
+      setImageSrc(fallback);
     }
   };
 
+  // Handle successful load
   const handleLoad = () => {
-    setIsLoading(false);
+    console.log('Image loaded successfully:', imageSrc);
     setHasError(false);
   };
-
-  if (isLoading || !imageSrc) {
-    return (
-      <div 
-        className={`bg-gray-200 animate-pulse ${className}`}
-        style={{ 
-          width: fill ? '100%' : width, 
-          height: fill ? '100%' : height,
-          aspectRatio: fill ? 'inherit' : `${width}/${height}`
-        }}
-      />
-    );
-  }
 
   const imageProps = {
     src: imageSrc,
     alt,
-    className: `object-cover transition-opacity duration-300 ${hasError ? 'opacity-80' : 'opacity-100'} ${className}`,
+    className: `transition-opacity duration-300 ${className}`,
     onError: handleError,
     onLoad: handleLoad,
     priority,
     sizes,
-    loading: priority ? 'eager' : loading,
+    loading: priority ? 'eager' as const : loading,
   };
 
   const imageElement = fill ? (
     <Image
       {...imageProps}
       fill
+      style={{ objectFit: 'cover' }}
     />
   ) : (
     <Image
       {...imageProps}
       width={width}
       height={height}
+      style={{ objectFit: 'cover' }}
     />
   );
 
@@ -107,8 +83,13 @@ export default function SafeImage({
   if (caption) {
     return (
       <figure className="my-8">
-        <div className={`relative ${fill ? 'w-full h-full' : ''}`}>
+        <div className={`relative ${fill ? 'w-full h-full' : ''} overflow-hidden rounded-lg`}>
           {imageElement}
+          {hasError && (
+            <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-500">صورة غير متاحة</span>
+            </div>
+          )}
         </div>
         <figcaption className="mt-3 text-center text-sm text-gray-500 italic">
           {caption}
@@ -117,5 +98,14 @@ export default function SafeImage({
     );
   }
 
-  return imageElement;
+  return (
+    <div className={`relative ${fill ? 'w-full h-full' : ''} overflow-hidden rounded-lg`}>
+      {imageElement}
+      {hasError && (
+        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-500">صورة غير متاحة</span>
+        </div>
+      )}
+    </div>
+  );
 } 
