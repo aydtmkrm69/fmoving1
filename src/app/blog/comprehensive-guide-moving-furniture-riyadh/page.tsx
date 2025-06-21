@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import ArticleTemplate from '@/components/mdx/ArticleTemplate';
 import Heading from '@/components/mdx/Heading';
-import Image from '@/components/mdx/Image';
+import Image from 'next/image';
 import Callout from '@/components/mdx/Callout';
 import { UnorderedList, OrderedList, ListItem } from '@/components/mdx/List';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'دليلك الشامل لنقل العفش في الرياض 2025: أفضل الشركات والممارسات',
     description: 'كل ما تحتاجه من معلومات محلية ونصائح عملية لضمان تجربة نقل عفش ناجحة في العاصمة السعودية مع أحدث الأسعار والشركات الموصى بها.',
-    images: ['/images/blog/comprehensive-guide-riyadh-moving.jpg'],
+    images: ['/images/blog/Guide_to_Moving_Furniture_in_Riyadh.jpeg'],
   },
 };
 
@@ -21,6 +21,7 @@ const post = {
   id: 'comprehensive-guide-moving-furniture-riyadh',
   title: 'دليلك الشامل لنقل العفش في الرياض 2025: أفضل الشركات والممارسات والأسعار',
   description: 'دليل متكامل ومحدث لنقل العفش في مدينة الرياض يتضمن أفضل الشركات المعتمدة، أحدث الأسعار، نصائح للتعامل مع تحديات المدينة، ومعلومات محلية تساعدك على اختيار أفضل خدمات النقل.',
+  excerpt: 'دليل شامل ومحدث يقدم معلومات تفصيلية عن خدمات نقل العفش في الرياض مع أحدث الأسعار وأفضل الممارسات والشركات الموصى بها في العاصمة السعودية.',
   content: 'دليل شامل ومحدث يقدم معلومات تفصيلية عن خدمات نقل العفش في الرياض مع أحدث الأسعار وأفضل الممارسات والشركات الموصى بها في العاصمة السعودية.',
   publishedAt: '2025-01-12',
   updatedAt: '2025-01-12',
@@ -45,7 +46,7 @@ const post = {
     'دليل النقل',
     'خدمات لوجستية'
   ],
-  image: '/images/blog/comprehensive-guide-riyadh-moving.jpg',
+  image: '/images/blog/Guide_to_Moving_Furniture_in_Riyadh.jpeg',
   slug: 'comprehensive-guide-moving-furniture-riyadh',
   readingTime: '15 دقيقة للقراءة',
 };
@@ -63,11 +64,19 @@ export default function BlogPost() {
         في هذا الدليل الشامل والمحدث لعام 2025، سنقدم لك كل ما تحتاج معرفته لضمان تجربة نقل عفش ناجحة في العاصمة السعودية، من اختيار الشركة المناسبة إلى التعامل مع التحديات المحلية الخاصة.
       </p>
 
-      <Image
-        src="/images/blog/comprehensive-guide-riyadh-moving.jpg"
-        alt="دليل شامل لنقل العفش في الرياض"
-        caption="خدمات نقل العفش المتخصصة في العاصمة السعودية - دليل شامل 2025"
-      />
+      <div className="my-8">
+        <Image
+          src="/images/blog/Guide_to_Moving_Furniture_in_Riyadh.jpeg"
+          alt="دليل شامل لنقل العفش في الرياض"
+          width={800}
+          height={400}
+          className="rounded-lg object-cover w-full"
+          unoptimized={true}
+        />
+        <p className="text-center text-sm text-gray-600 mt-2 italic">
+          خدمات نقل العفش المتخصصة في العاصمة السعودية - دليل شامل 2025
+        </p>
+      </div>
 
       <Heading as="h2">خصوصية وتحديات نقل العفش في الرياض</Heading>
 
@@ -115,11 +124,19 @@ export default function BlogPost() {
         <ListItem><strong>تجنب يونيو - سبتمبر:</strong> حرارة قاسية تصل إلى 50°م</ListItem>
       </UnorderedList>
 
-      <Image
-        src="/images/blog/riyadh-moving-calendar.jpg"
-        alt="أفضل أوقات نقل العفش في الرياض"
-        caption="دليل التوقيت المثالي لنقل العفش في الرياض حسب المناخ والازدحام"
-      />
+      <div className="my-8">
+        <Image
+          src="/images/blog/Furniture_Moving_Process.jpeg"
+          alt="أفضل أوقات نقل العفش في الرياض"
+          width={800}
+          height={400}
+          className="rounded-lg object-cover w-full"
+          unoptimized={true}
+        />
+        <p className="text-center text-sm text-gray-600 mt-2 italic">
+          دليل التوقيت المثالي لنقل العفش في الرياض حسب المناخ والازدحام
+        </p>
+      </div>
 
       <Heading as="h2">معايير اختيار أفضل شركة نقل عفش في الرياض</Heading>
 
@@ -143,14 +160,6 @@ export default function BlogPost() {
         <ListItem><strong>معدات متخصصة:</strong> أحزمة نقل، عربات، مواد تغليف احترافية</ListItem>
         <ListItem><strong>خدمة عملاء متاحة:</strong> للاستفسارات والمتابعة</ListItem>
         <ListItem><strong>ضمان على الخدمة:</strong> تعويض في حال حدوث أضرار</ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">التقييمات والسمعة</Heading>
-      <UnorderedList>
-        <ListItem><strong>تقييمات Google Reviews:</strong> 4.2 نجوم أو أكثر</ListItem>
-        <ListItem><strong>شهادات عملاء حقيقية:</strong> قابلة للتحقق</ListItem>
-        <ListItem><strong>سجل خبرة:</strong> 5 سنوات على الأقل في السوق</ListItem>
-        <ListItem><strong>شراكات مؤسسية:</strong> عمل مع شركات أو جهات حكومية</ListItem>
       </UnorderedList>
 
       <Callout type="info" title="نصيحة الخبراء">
@@ -180,21 +189,19 @@ export default function BlogPost() {
         <ListItem><strong>إلى المناطق النائية (+50 كم):</strong> +700-1200 ريال</ListItem>
       </UnorderedList>
 
-      <Heading as="h3">تكلفة الخدمات الإضافية</Heading>
-      <UnorderedList>
-        <ListItem><strong>فك وتركيب الأثاث:</strong> 300-1000 ريال حسب التعقيد</ListItem>
-        <ListItem><strong>تغليف احترافي:</strong> 250-700 ريال حسب الكمية</ListItem>
-        <ListItem><strong>رفع بالرافعة الكهربائية:</strong> 600-1500 ريال</ListItem>
-        <ListItem><strong>تخزين مؤقت:</strong> 400-600 ريال أسبوعياً</ListItem>
-        <ListItem><strong>نقل في نفس اليوم (خدمة سريعة):</strong> +50% من السعر الأساسي</ListItem>
-        <ListItem><strong>العمل في الأوقات الليلية:</strong> +30% من السعر الأساسي</ListItem>
-      </UnorderedList>
-
-      <Image
-        src="/images/blog/riyadh-moving-prices-chart.jpg"
-        alt="جدول أسعار نقل العفش في الرياض 2025"
-        caption="متوسط أسعار نقل العفش في الرياض لمختلف أحجام المنازل والخدمات"
-      />
+      <div className="my-8">
+        <Image
+          src="/images/blog/Furniture_Moving_Prices_in_Saudi_Arabia.jpeg"
+          alt="جدول أسعار نقل العفش في الرياض 2025"
+          width={800}
+          height={400}
+          className="rounded-lg object-cover w-full"
+          unoptimized={true}
+        />
+        <p className="text-center text-sm text-gray-600 mt-2 italic">
+          متوسط أسعار نقل العفش في الرياض لمختلف أحجام المنازل والخدمات
+        </p>
+      </div>
 
       <Heading as="h2">دليل أحياء الرياض من منظور نقل العفش</Heading>
 
@@ -208,7 +215,6 @@ export default function BlogPost() {
         <ListItem><strong>حي الملقا:</strong> فلل فاخرة مع شوارع واسعة، قيود على أوقات دخول الشاحنات</ListItem>
         <ListItem><strong>حي النرجس:</strong> مجمعات سكنية مغلقة، يحتاج تصريح أمني مسبق</ListItem>
         <ListItem><strong>حي الياسمين:</strong> فلل وشقق حديثة، بنية تحتية ممتازة</ListItem>
-        <ListItem><strong>حي الورود:</strong> منطقة راقية مع قيود صارمة على مواعيد النقل</ListItem>
       </UnorderedList>
 
       <Heading as="h3">شرق الرياض - التنوع العمراني</Heading>
@@ -216,29 +222,7 @@ export default function BlogPost() {
         <ListItem><strong>حي الروضة:</strong> مزيج من القديم والحديث، شوارع متوسطة العرض</ListItem>
         <ListItem><strong>حي النزهة:</strong> كثافة سكانية عالية، قد يتطلب مواقف بديلة</ListItem>
         <ListItem><strong>حي الربوة:</strong> مباني متنوعة الارتفاع، أحياناً تحتاج معدات خاصة</ListItem>
-        <ListItem><strong>حي الرواد:</strong> منطقة حديثة مع تسهيلات جيدة للنقل</ListItem>
       </UnorderedList>
-
-      <Heading as="h3">غرب الرياض - الكثافة السكانية العالية</Heading>
-      <UnorderedList>
-        <ListItem><strong>حي السويدي:</strong> منطقة شعبية مكتظة، مواقف محدودة</ListItem>
-        <ListItem><strong>حي الشفا:</strong> شوارع ضيقة، يفضل الشاحنات الصغيرة</ListItem>
-        <ListItem><strong>حي العريجاء:</strong> منطقة حيوية مع ازدحام مروري</ListItem>
-        <ListItem><strong>حي الدرعية:</strong> منطقة تراثية مع قيود على المركبات الثقيلة</ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">جنوب الرياض - المناطق الناشئة</Heading>
-      <UnorderedList>
-        <ListItem><strong>حي الحزم:</strong> منطقة حديثة مع بنية تحتية متطورة</ListItem>
-        <ListItem><strong>حي الرمال:</strong> تطوير سريع مع بعض الشوارع قيد الإنشاء</ListItem>
-        <ListItem><strong>حي الدوحة:</strong> منطقة هادئة مع تسهيلات جيدة للنقل</ListItem>
-      </UnorderedList>
-
-      <Image
-        src="/images/blog/riyadh-districts-moving-guide.jpg"
-        alt="خريطة أحياء الرياض دليل النقل"
-        caption="دليل مناطق الرياض وخصائصها المؤثرة على عمليات نقل العفش"
-      />
 
       <Heading as="h2">التحديات المناخية وحلولها العملية</Heading>
 
@@ -252,106 +236,11 @@ export default function BlogPost() {
         <ListItem><strong>شاحنات مكيفة:</strong> للمنقولات الحساسة مثل الإلكترونيات والأعمال الفنية</ListItem>
         <ListItem><strong>ترطيب الهواء:</strong> في مقصورة النقل لحماية الأثاث الخشبي</ListItem>
         <ListItem><strong>تجنب التعرض المباشر:</strong> نقل سريع من المنزل إلى الشاحنة</ListItem>
-        <ListItem><strong>مراقبة درجة الحرارة:</strong> أجهزة قياس داخل الشاحنة</ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">التعامل مع العواصف الرملية (مارس - مايو)</Heading>
-      <UnorderedList>
-        <ListItem><strong>تغليف مضاعف:</strong> طبقات إضافية من البلاستيك الواقي</ListItem>
-        <ListItem><strong>إغلاق محكم:</strong> للشاحنات لمنع دخول الغبار</ListItem>
-        <ListItem><strong>تنظيف فوري:</strong> للمنزل الجديد قبل إدخال الأثاث</ListItem>
-        <ListItem><strong>متابعة الأرصاد:</strong> تطبيق "المركز الوطني للأرصاد" للتنبؤات</ListItem>
-        <ListItem><strong>خطة بديلة:</strong> مرونة في التأجيل حال التحذير من عاصفة</ListItem>
       </UnorderedList>
 
       <Callout type="warning" title="تحذير مناخي">
         خلال أشهر الصيف، قد تصل درجة الحرارة داخل الشاحنات المغلقة إلى <strong>70°م</strong>، مما قد يضر بالأثاث الخشبي والإلكترونيات. احرص على استخدام شاحنات مكيفة أو أوقات نقل مبكرة.
       </Callout>
-
-      <Heading as="h2">أحدث تقنيات نقل العفش في الرياض</Heading>
-
-      <p className="mb-4">
-        تشهد خدمات نقل العفش في الرياض تطوراً تقنياً مستمراً، كما هو مفصل في دليلنا حول <Link href="/blog/technology-improving-furniture-moving-experience" className="text-blue-600 hover:underline">كيف تساهم التكنولوجيا في تحسين تجربة نقل العفش</Link>.
-      </p>
-
-      <Heading as="h3">التقنيات المتطورة المتاحة</Heading>
-      <UnorderedList>
-        <ListItem><strong>الرافعات الهيدروليكية:</strong> لنقل الأثاث من وإلى الطوابق العالية</ListItem>
-        <ListItem><strong>أنظمة تتبع GPS:</strong> لمراقبة موقع الشحنة في الوقت الفعلي</ListItem>
-        <ListItem><strong>التصوير ثلاثي الأبعاد:</strong> لقياس الأثاث والممرات مسبقاً</ListItem>
-        <ListItem><strong>تطبيقات الجوال:</strong> لحجز الخدمة ومتابعة الحالة</ListItem>
-        <ListItem><strong>أجهزة استشعار:</strong> لمراقبة الرطوبة ودرجة الحرارة أثناء النقل</ListItem>
-        <ListItem><strong>الطائرات المسيّرة:</strong> لمسح المواقع وتحديد أفضل طرق الوصول</ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">نظم الأمان والحماية</Heading>
-      <UnorderedList>
-        <ListItem><strong>كاميرات مراقبة:</strong> داخل الشاحنات لضمان سلامة المنقولات</ListItem>
-        <ListItem><strong>أقفال ذكية:</strong> مع رموز دخول متغيرة للأمان</ListItem>
-        <ListItem><strong>تأمين رقمي:</strong> تقييم فوري للأضرار وتعويض سريع</ListItem>
-        <ListItem><strong>أنظمة إنذار:</strong> في حال محاولة فتح الشاحنة بطريقة غير مشروعة</ListItem>
-      </UnorderedList>
-
-      <Image
-        src="/images/blog/riyadh-moving-technology.jpg"
-        alt="تقنيات نقل العفش الحديثة في الرياض"
-        caption="أحدث التقنيات المستخدمة في خدمات نقل العفش بالرياض"
-      />
-
-      <Heading as="h2">دليل التحضير والإعداد المسبق</Heading>
-
-      <p className="mb-4">
-        التحضير الجيد يضمن نجاح عملية النقل، وللمزيد من النصائح اطلع على <Link href="/blog/prepare-home-before-moving" className="text-blue-600 hover:underline">كيفية تحضير المنزل قبل النقل</Link> و <Link href="/blog/ultimate-moving-day-checklist" className="text-blue-600 hover:underline">قائمة مراجعة يوم النقل الشاملة</Link>.
-      </p>
-
-      <Heading as="h3">قبل 4 أسابيع من النقل</Heading>
-      <UnorderedList>
-        <ListItem><strong>الحصول على عروض أسعار:</strong> من 5 شركات مختلفة على الأقل</ListItem>
-        <ListItem><strong>مقارنة العروض:</strong> التكلفة والخدمات والتقييمات</ListItem>
-        <ListItem><strong>حجز الشركة:</strong> مع دفع عربون لضمان الموعد</ListItem>
-        <ListItem><strong>إشعار الجيران:</strong> خاصة في المباني السكنية</ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">قبل أسبوعين من النقل</Heading>
-      <UnorderedList>
-        <ListItem><strong>فرز الأغراض:</strong> تحديد ما سيتم نقله والتخلص من غير المرغوب، كما هو موضح في <Link href="/blog/what-to-do-with-unwanted-items-before-moving" className="text-blue-600 hover:underline">ماذا تفعل بالأغراض غير المرغوبة قبل النقل</Link></ListItem>
-        <ListItem><strong>حجز مصعد الخدمة:</strong> في المباني السكنية</ListItem>
-        <ListItem><strong>الحصول على تصاريح:</strong> للمجمعات السكنية المغلقة</ListItem>
-        <ListItem><strong>ترتيب مواقف الشاحنات:</strong> في الموقعين القديم والجديد</ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">يوم النقل</Heading>
-      <UnorderedList>
-        <ListItem><strong>التحقق من الطقس:</strong> لاتخاذ احتياطات إضافية</ListItem>
-        <ListItem><strong>تحضير المشروبات:</strong> للعمال خاصة في الصيف</ListItem>
-        <ListItem><strong>التوثيق بالصور:</strong> للأثاث قبل النقل لأغراض التأمين</ListItem>
-        <ListItem><strong>الإشراف الشخصي:</strong> على عملية التغليف والنقل</ListItem>
-      </UnorderedList>
-
-      <Heading as="h2">الخدمات المتكاملة والمتخصصة</Heading>
-
-      <Heading as="h3">خدمات إضافية مفيدة</Heading>
-      <UnorderedList>
-        <ListItem><strong>التنظيف الشامل:</strong> للمنزل القديم والجديد</ListItem>
-        <ListItem><strong>التخزين الآمن:</strong> كما هو مفصل في <Link href="/blog/secure-furniture-storage-services-saudi-arabia" className="text-blue-600 hover:underline">خدمات تخزين الأثاث الآمنة في السعودية</Link></ListItem>
-        <ListItem><strong>فك وتركيب الأجهزة:</strong> مكيفات، ثريات، أجهزة كهربائية</ListItem>
-        <ListItem><strong>النقل التجاري:</strong> للمكاتب والشركات، كما هو موضح في <Link href="/blog/office-company-furniture-moving-saudi-arabia" className="text-blue-600 hover:underline">نقل عفش المكاتب والشركات</Link></ListItem>
-        <ListItem><strong>تركيب الأثاث:</strong> للقطع التي تحتاج تجميع، راجع <Link href="/blog/safely-disassemble-assemble-complex-furniture" className="text-blue-600 hover:underline">كيفية فك وتركيب الأثاث المعقد بأمان</Link></ListItem>
-      </UnorderedList>
-
-      <Heading as="h3">خدمات النقل المتخصصة</Heading>
-      <UnorderedList>
-        <ListItem><strong>نقل البيانو والآلات الموسيقية:</strong> بمعدات وخبرة خاصة</ListItem>
-        <ListItem><strong>نقل الأعمال الفنية:</strong> بتغليف وحماية متخصصة</ListItem>
-        <ListItem><strong>نقل الخزائن والخزانات:</strong> بمعدات رفع متطورة</ListItem>
-        <ListItem><strong>نقل الأثاث الأثري:</strong> بعناية فائقة وتأمين شامل</ListItem>
-      </UnorderedList>
-
-      <Image
-        src="/images/blog/riyadh-specialized-moving-services.jpg"
-        alt="خدمات النقل المتخصصة في الرياض"
-        caption="الخدمات المتخصصة والمتكاملة لنقل العفش في الرياض"
-      />
 
       <Heading as="h2">نصائح توفير التكلفة</Heading>
 
@@ -386,8 +275,6 @@ export default function BlogPost() {
         <ListItem>✅ تحضير الأغراض وفرز غير المرغوب</ListItem>
         <ListItem>✅ توثيق الأثاث بالصور قبل النقل</ListItem>
         <ListItem>✅ تحضير مبلغ نقدي للإكراميات والطوارئ</ListItem>
-        <ListItem>✅ التأكد من أرقام الاتصال لجميع الأطراف</ListItem>
-        <ListItem>✅ مراجعة خطة يوم النقل مع الشركة</ListItem>
       </OrderedList>
 
       <Heading as="h2">الخاتمة: رحلة نقل ناجحة تبدأ بالتخطيط الجيد</Heading>
@@ -404,11 +291,19 @@ export default function BlogPost() {
         نحن هنا لمساعدتك في كل خطوة! تواصل معنا للحصول على <strong>استشارة مجانية</strong> حول اختيار أفضل شركة نقل عفش في الرياض، أو للحصول على نصائح مخصصة لحالتك الخاصة. فريقنا من الخبراء جاهز لتقديم المساعدة عبر نموذج الاتصال في موقعنا.
       </Callout>
 
-      <Image
-        src="/images/blog/successful-riyadh-moving.jpg"
-        alt="نقل عفش ناجح في الرياض"
-        caption="تجربة نقل عفش ناجحة ومريحة في العاصمة السعودية"
-      />
+      <div className="my-8">
+        <Image
+          src="/images/blog/Furniture_Moving_Services.jpeg"
+          alt="نقل عفش ناجح في الرياض"
+          width={800}
+          height={400}
+          className="rounded-lg object-cover w-full"
+          unoptimized={true}
+        />
+        <p className="text-center text-sm text-gray-600 mt-2 italic">
+          تجربة نقل عفش ناجحة ومريحة في العاصمة السعودية
+        </p>
+      </div>
     </>
   );
 
